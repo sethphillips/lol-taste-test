@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5 {
 .results {
   display: inline-block;
   width: 48%;
-  padding: 0 1em;
+  padding: 0;
   vertical-align: text-top; }
   .results.taste-results {
     border-right: 2px solid #fef2d4; }

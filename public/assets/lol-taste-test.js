@@ -7849,7 +7849,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+9896e2e4"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+6c1d6842"});
 }
 
 /* jshint ignore:end */
