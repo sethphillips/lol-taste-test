@@ -35,11 +35,11 @@ export default Ember.Controller.extend({
         this._toggleElements();
         this.store.unloadAll();
         this.send('refreshRoute');
-        this.set('submitMessage',"Thank you, Please stick around for one of our presentations.")
+        this.set('submitMessage',"Thank you, Please check out our presentation times.")
         this.set('submitModalOpen',true);
       })
       .catch(()=>{
-        this.set('submitMessage',"Sorry, somethign went wrong.  Check with an associate to complete your request, also please stick around for one of our presentations.")
+        this.set('submitMessage',"Sorry, somethign went wrong.  Check with an associate to complete your request, also please check out our presentation times.")
         this.set('submitModalOpen',true);
       })
       .finally(()=>{

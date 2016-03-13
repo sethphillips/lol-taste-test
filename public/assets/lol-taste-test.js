@@ -272,7 +272,7 @@ define("lol-taste-test/components/color-test-results/template", ["exports"], fun
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("br");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("the sample without FD&C colors");
+        var el2 = dom.createTextNode("the sample without FD&C colors?");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
@@ -5122,10 +5122,10 @@ define('lol-taste-test/signup/controller', ['exports', 'ember'], function (expor
           _this._toggleElements();
           _this.store.unloadAll();
           _this.send('refreshRoute');
-          _this.set('submitMessage', "Thank you, Please stick around for one of our presentations.");
+          _this.set('submitMessage', "Thank you, Please check out our presentation times.");
           _this.set('submitModalOpen', true);
         })['catch'](function () {
-          _this.set('submitMessage', "Sorry, somethign went wrong.  Check with an associate to complete your request, also please stick around for one of our presentations.");
+          _this.set('submitMessage', "Sorry, somethign went wrong.  Check with an associate to complete your request, also please check out our presentation times.");
           _this.set('submitModalOpen', true);
         })['finally'](function () {
           _ember['default'].run.later(_this, _this._closeModal, 7000);
@@ -7849,7 +7849,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+6c1d6842"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+376fbde7"});
 }
 
 /* jshint ignore:end */
