@@ -1,0 +1,461 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0; }
+
+.container {
+  background-color: #1c82a1;
+  text-align: center;
+  font-size: 3em;
+  color: #fef2d4;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: url("images/tablet_bg.jpg");
+  background-size: cover;
+  font-family: Din, sans-serif; }
+  .container.signup {
+    background-color: white;
+    background-image: none; }
+  .container.test-results {
+    width: 1920px;
+    height: 1080px; }
+
+.button-container {
+  margin-top: .25em;
+  width: 100%; }
+  .button-container button {
+    font-size: 1.7em;
+    border: none;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+    background-color: white;
+    color: red;
+    border-radius: .2em;
+    padding: .25em .5em;
+    margin: 0 1em; }
+    .button-container button.language {
+      font-size: 1.2em; }
+
+.lower-logo {
+  position: absolute;
+  bottom: 0;
+  width: 15%;
+  left: 42.5%;
+  background-color: #fcd902; }
+
+.results {
+  display: inline-block;
+  width: 48%;
+  padding: 0 1em;
+  vertical-align: text-top; }
+  .results.taste-results {
+    border-right: 2px solid #fef2d4; }
+  .results h2 {
+    font-size: 2em; }
+  .results h3 {
+    font-size: 1em; }
+
+.test-step {
+  height: 100vh; }
+
+@font-face {
+  font-family: veneer;
+  font-weight: normal;
+  src: url("fonts/veneer.otf"); }
+
+@font-face {
+  font-family: treasured;
+  font-weight: normal;
+  src: url("fonts/treasured.otf"); }
+
+@font-face {
+  font-family: faith;
+  font-weight: normal;
+  src: url("fonts/faith.otf"); }
+
+@font-face {
+  font-family: din;
+  font-weight: normal;
+  src: url("fonts/din.otf"); }
+
+.signup {
+  width: 1080px;
+  height: 1920px;
+  border: 1px solid grey;
+  font-size: 22px;
+  font-family: Din, sans-serif;
+  text-align: left;
+  color: #88867f; }
+  .signup .logo-container {
+    position: absolute;
+    padding: 25px;
+    z-index: 3; }
+    .signup .logo-container .logo {
+      height: 125px; }
+  .signup .diagonal {
+    z-index: 2;
+    position: absolute;
+    width: 120%;
+    left: -10%;
+    height: 185px;
+    top: -33px;
+    background-color: white;
+    transform: rotate(-4deg); }
+  .signup .header {
+    background-color: #f8800b;
+    position: relative;
+    top: 50px;
+    padding: 140px 25px 25px 25px;
+    color: white; }
+  .signup .instructions {
+    margin-top: 75px; }
+    .signup .instructions img {
+      float: right;
+      width: 45%; }
+    .signup .instructions p {
+      margin: 0 0 1em 0;
+      padding: 0 1em; }
+  .signup .form-container {
+    max-height: 1290px;
+    overflow: scroll;
+    padding: 1em; }
+    .signup .form-container .input {
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      margin: 0 0 .5em 0;
+      border-radius: 5px;
+      border: 1px solid #88867f;
+      padding: .3em; }
+    .signup .form-container .error {
+      color: red;
+      font-size: .6em; }
+    .signup .form-container .ember-power-select {
+      width: 100%;
+      margin: 1em 0; }
+      .signup .form-container .ember-power-select .ember-power-select-trigger:focus {
+        outline: none; }
+    .signup .form-container .buttons {
+      margin-bottom: 1em; }
+    .signup .form-container .submit {
+      font-size: 1em;
+      background-color: #1c82a1;
+      color: white;
+      border-radius: 10px;
+      padding: .25em 2em;
+      border: none; }
+      .signup .form-container .submit:focus {
+        outline: none;
+        cursor: pointer; }
+      .signup .form-container .submit.back {
+        background-color: #88867f; }
+  .signup .flavor-list-animate {
+    margin-bottom: 1em; }
+  .signup .flavor-list {
+    border: 4px solid #f8800b;
+    padding: .5em 1em;
+    border-radius: 10px;
+    font-size: .8em; }
+    .signup .flavor-list .fa {
+      float: right; }
+    .signup .flavor-list h4 {
+      cursor: pointer; }
+    .signup .flavor-list h5 {
+      font-size: 1.1em;
+      margin: 1em 0 .5em 0; }
+  .signup .flavor {
+    cursor: pointer;
+    margin: .25em 0; }
+    .signup .flavor.featured {
+      border: 4px solid #f8800b;
+      padding: 1em 1em;
+      border-radius: 15px;
+      margin-bottom: 1em; }
+    .signup .flavor .flavor-circle {
+      position: absolute;
+      right: 5px;
+      top: 15px;
+      width: 15%; }
+    .signup .flavor .flavor-name .tiny-k {
+      height: .8em; }
+    .signup .flavor .flavor-name.selected {
+      color: #f8800b; }
+    .signup .flavor .flavor-details {
+      padding: .25em 1em; }
+      .signup .flavor .flavor-details .text {
+        margin: 0;
+        margin-bottom: 1em; }
+
+.submit-message {
+  font-size: 2em;
+  padding: 2em;
+  text-align: center; }
+
+.ember-basic-dropdown {
+  position: relative; }
+
+.ember-basic-dropdown, .ember-basic-dropdown *, .ember-basic-dropdown-content, .ember-basic-dropdown-content * {
+  box-sizing: border-box; }
+  .ember-basic-dropdown .ember-basic-dropdown--left, .ember-basic-dropdown * .ember-basic-dropdown--left, .ember-basic-dropdown-content .ember-basic-dropdown--left, .ember-basic-dropdown-content * .ember-basic-dropdown--left {
+    left: 0; }
+  .ember-basic-dropdown .ember-basic-dropdown--right, .ember-basic-dropdown * .ember-basic-dropdown--right, .ember-basic-dropdown-content .ember-basic-dropdown--right, .ember-basic-dropdown-content * .ember-basic-dropdown--right {
+    right: 0; }
+
+.ember-basic-dropdown-text-select-disabled {
+  user-select: none;
+  -webkit-user-select: none; }
+
+.ember-basic-dropdown-content {
+  position: absolute;
+  width: auto;
+  z-index: 1000;
+  background-color: #ffffff; }
+
+.ember-power-select {
+  position: relative; }
+
+.ember-power-select *, .ember-power-select-dropdown * {
+  box-sizing: border-box; }
+
+.ember-power-select-trigger {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  background-color: #ffffff;
+  line-height: 1.75;
+  text-overflow: ellipsis;
+  min-height: 1.75em;
+  user-select: none;
+  -webkit-user-select: none;
+  color: inherit;
+  /* Minimum clearfix for modern browsers */ }
+  .ember-power-select-trigger:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .ember-power-select-trigger:focus {
+    border: 1px solid #aaaaaa;
+    box-shadow: none; }
+  .ember-power-select.multiple .ember-power-select-trigger {
+    height: auto; }
+  .ember-power-select:not(.multiple) .ember-power-select-trigger {
+    white-space: nowrap; }
+
+.ember-basic-dropdown--below .ember-power-select-trigger[aria-expanded="true"],
+.ember-basic-dropdown--in-place .ember-power-select-trigger[aria-expanded="true"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.ember-basic-dropdown--above .ember-power-select-trigger[aria-expanded="true"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.ember-power-select-placeholder {
+  color: #999999;
+  display: block;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ember-power-select-status-icon {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-style: solid;
+  border-width: 7px 4px 0 4px;
+  border-color: #aaaaaa transparent transparent transparent; }
+  .ember-basic-dropdown-trigger[aria-expanded="true"] .ember-power-select-status-icon {
+    transform: rotate(180deg); }
+
+.ember-power-select-clear-btn {
+  position: absolute;
+  cursor: pointer; }
+
+.ember-power-select-multiple-trigger {
+  display: flex;
+  flex-wrap: wrap; }
+
+.ember-power-select-trigger-multiple-input {
+  flex: 1;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  width: 25px;
+  display: inline-block;
+  line-height: inherit;
+  -webkit-appearance: none;
+  outline: none;
+  padding: 0;
+  float: left;
+  background-color: transparent; }
+  .ember-power-select-trigger-multiple-input:disabled {
+    background-color: #eeeeee; }
+
+.ember-power-select-multiple-options {
+  padding: 0;
+  margin: 0; }
+
+.ember-power-select-multiple-option {
+  border: 1px solid gray;
+  border-radius: 4px;
+  color: #333333;
+  background-color: #e4e4e4;
+  padding: 0 4px;
+  display: inline-block;
+  line-height: 1.45;
+  float: left;
+  margin: 2px 3px 2px 0; }
+
+.ember-power-select-multiple-remove-btn {
+  cursor: pointer; }
+  .ember-power-select-multiple-remove-btn:not(:hover) {
+    opacity: 0.5; }
+
+.ember-power-select-search {
+  padding: 4px; }
+  .ember-power-select-search input {
+    border: 1px solid #aaaaaa;
+    border-radius: 0;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0 5px; }
+    .ember-power-select-search input:focus {
+      border: 1px solid #aaaaaa;
+      box-shadow: none; }
+
+.ember-power-select-dropdown {
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  line-height: 1.75;
+  border-radius: 4px;
+  box-shadow: none;
+  overflow: hidden;
+  color: inherit; }
+  .ember-power-select-dropdown.ember-basic-dropdown--above {
+    border-top: 1px solid #aaaaaa;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  .ember-power-select-dropdown.ember-basic-dropdown--below, .ember-basic-dropdown--in-place .ember-power-select-dropdown {
+    border-top: none;
+    border-bottom: 1px solid #aaaaaa;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+
+.ember-power-select .ember-power-select-dropdown {
+  width: 100%; }
+
+.ember-power-select-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none; }
+  .ember-power-select-options[role="listbox"] {
+    overflow-y: auto;
+    max-height: 12.25em; }
+
+.ember-power-select-option {
+  cursor: pointer;
+  padding: 0 8px; }
+
+.ember-power-select-option[aria-disabled="true"] {
+  color: #999999;
+  pointer-events: none; }
+
+.ember-power-select-option[aria-selected="true"] {
+  background-color: #dddddd; }
+
+.ember-power-select-option[aria-current="true"] {
+  background-color: #5897fb;
+  color: #ffffff; }
+
+.ember-power-select-group-name {
+  cursor: default;
+  font-weight: bold; }
+
+.ember-power-select-trigger[aria-disabled=true] {
+  background-color: #eeeeee; }
+
+.ember-power-select-trigger {
+  padding: 0 16px 0 8px; }
+
+.ember-power-select-status-icon {
+  right: 5px; }
+
+.ember-power-select-clear-btn {
+  right: 25px; }
+
+.ember-power-select-group .ember-power-select-group .ember-power-select-group-name {
+  padding-left: 24px; }
+
+.ember-power-select-group .ember-power-select-group .ember-power-select-option {
+  padding-left: 40px; }
+
+.ember-power-select-group .ember-power-select-option {
+  padding-left: 24px; }
+
+.ember-power-select-group .ember-power-select-group-name {
+  padding-left: 8px; }
+
+.ember-power-select[dir=rtl] .ember-power-select-trigger {
+  padding: 0 8px 0 16px; }
+  .ember-power-select[dir=rtl] .ember-power-select-trigger .ember-power-select-multiple-option {
+    float: right; }
+  .ember-power-select[dir=rtl] .ember-power-select-trigger .ember-power-select-trigger-multiple-input {
+    float: right; }
+
+.ember-power-select[dir=rtl] .ember-power-select-status-icon {
+  left: 5px;
+  right: initial; }
+
+.ember-power-select[dir=rtl] .ember-power-select-clear-btn {
+  left: 25px;
+  right: initial; }
+
+.ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-group .ember-power-select-group-name {
+  padding-right: 24px; }
+
+.ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-group .ember-power-select-option {
+  padding-right: 40px; }
+
+.ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-option {
+  padding-right: 24px; }
+
+.ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-group-name {
+  padding-right: 8px; }
+
+.ember-modal-overlay {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50; }
+
+.ember-modal-dialog {
+  z-index: 50;
+  position: fixed; }
+  .ember-modal-dialog.ember-modal-dialog-in-place {
+    position: relative; }
+
+.ember-modal-dialog {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #222;
+  padding: 10px; }
+
+.ember-modal-overlay.translucent {
+  background-color: rgba(128, 128, 128, 0.77); }
+
+/*# sourceMappingURL=lol-taste-test.css.map */
