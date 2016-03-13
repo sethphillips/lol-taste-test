@@ -8,6 +8,15 @@ export default function(){
     this.includingInitialRender()
   );
 
+   this.transition(
+    this.hasClass('results-animation'),
+    this.fromValue(false),
+    this.toValue(true),
+    this.use('toRight', {duration:1000}),
+    this.reverse('toRight',{duration:1000}),
+    this.includingInitialRender()
+  );
+
   this.transition(
     this.hasClass('flavor-animation'),
     this.toValue(true),

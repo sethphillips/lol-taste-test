@@ -4,8 +4,11 @@ export default Ember.Route.extend({
 
   model(){
     return this.store.findAll('sample')
-      .finally(()=>{
-        Ember.run.later(this,this.refresh,5000);
-      })
+  },
+
+  actions:{
+    refresh(){
+      this.refresh();
+    }
   }
 });

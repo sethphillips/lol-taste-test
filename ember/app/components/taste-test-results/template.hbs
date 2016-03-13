@@ -1,4 +1,10 @@
-<h3>Here is what others prefer</h3>
 
-<h2>Sample A {{ animated-counter sample=sampleA }}</h2>
-<h2>Sample B {{ animated-counter sample=sampleB }}</h2>
+{{#if showSampleA}}
+  <h3>How many preferred<br>sample A?</h3>
+  <h2>{{ animated-counter sample=sampleA }}</h2>
+{{/if}}
+
+{{#if showSampleB}}
+  <h3>How many preferred<br>sample B?</h3>
+  <h2>{{ animated-counter sample=sampleB }}</h2>
+{{/if}}

@@ -10,7 +10,6 @@ export default Ember.Component.extend({
 
   didReceiveAttrs(){
     this.trigger('update');
-    console.log('updated!')
   },
 
   animate: task(function * (){
@@ -23,7 +22,7 @@ export default Ember.Component.extend({
     while(delta){
       this.set('current', this.get('current') + direction);
       delta--;
-      yield timeout(100);
+      yield timeout(30);
     }
 
   }).on('update').restartable(),

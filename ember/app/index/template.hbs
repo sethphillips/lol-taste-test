@@ -1,6 +1,16 @@
-<div class="container">
-  <h1>Taste Test Challenge</h1>
-  {{ taste-test-results results=model }}
+<div class="container test-results">
 
-  {{ color-test-results results=model }}
+  {{#liquid-if showSampleA class="results-animation" enableGrowth=false}}
+    {{ test-results model=model sample='a' transition=(action 'showCall' 'b') }}
+  {{else}}
+    {{#liquid-if showSampleB class="results-animation" enableGrowth=false}}
+      {{ test-results model=model sample='a' transition=(action 'showCall' 'a') }}
+    {{else}}
+      {{#liquid-if showCall class="results-animation" enableGrowth=false}}
+        {{ test-call  showA=(action 'showA')  showB=(action 'showB') next=next}}
+      {{/liquid-if}}
+    {{/liquid-if}}
+  {{/liquid-if}}
+
+  <img src="assets/images/logo_small.png" alt="" class="lower-logo">
 </div>
