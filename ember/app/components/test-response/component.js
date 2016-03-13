@@ -18,11 +18,7 @@ export default Ember.Component.extend(TextImage,{
 
   init(){
     this._super(...arguments);
-    Ember.run.later(this, this._displayThanks,5000);
+    Ember.run.later(this, this.attrs.reset,5000);
   },
 
-  _displayThanks(){
-    this.set('thanks',true);
-    Ember.run.later(this, this.attrs.reset,5000);
-  }
 });

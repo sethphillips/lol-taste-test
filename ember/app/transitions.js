@@ -4,7 +4,7 @@ export default function(){
     this.fromValue(true),
     this.toValue(false),
     this.use('toRight', {duration:500}),
-    this.reverse('toUp',{duration:500}),
+    this.reverse('toRight',{duration:500}),
     this.includingInitialRender()
   );
 
