@@ -1,0 +1,31 @@
+<div class="container signup">
+
+  <div class="logo-container">
+    <img src="assets/images/logo_ingredients.png" class="logo">
+  </div>
+  <div class="diagonal"></div>
+  <div class="header">
+    <h2>Request a Sample</h2>
+  </div>
+  <div class="instructions">
+    <img src="assets/images/sifted.jpg" >
+    <p>Explore the opportunities our dairy-based products can bring to your snack applications. Fill out the form below and select the spray-dried dairy powders and dry-blended seasonings you’d like to sample—and learn how our product development experts can team up with you to give your products a real dairy advantage.</p>
+
+    <p><b><sup>*</sup>PLEASE NOTE:</b> Land O’Lakes Ingredients is a business-to-business ingredient supplier for food manufacturers and does not work directly with consumers. All sample requests will be reviewed and qualified. <b>Samples will only be sent to U.S. food manufacturers.</b></p>
+  </div>
+  <div class="form-container draggable">
+    {{#liquid-if showForm class="form-animation"}}
+      {{ signup-form signup=model next=(action 'switchToFlavors') }}
+    {{ else }}
+      {{ signup-flavor-list add=(action 'addFlavor') remove=(action 'removeFlavor') back=(action 'switchToForm') save=(action 'save') signup=model}}
+    {{/liquid-if}}
+  </div>
+</div>
+
+{{#if submitModalOpen}}
+  {{#modal-dialog translucentOverlay=true}}
+    <div class="submit-message">
+      {{ submitMessage }}
+    </div>
+  {{/modal-dialog}}
+{{/if}}

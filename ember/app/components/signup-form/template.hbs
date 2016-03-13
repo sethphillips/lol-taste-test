@@ -1,0 +1,77 @@
+
+{{#if validated}}
+  {{#each signup.errors.name as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.name placeholder="full name" class="input"}}
+
+{{#if validated}}
+  {{#each signup.errors.company as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.company placeholder="company" class="input"}}
+
+{{#if validated}}
+  {{#each signup.errors.title as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.title placeholder="title" class="input"}}
+
+{{#if validated}}
+  {{#each signup.errors.email as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.email placeholder="email" class="input"}}
+
+{{#if validated}}
+  {{#each signup.errors.phone as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.phone placeholder="phone" class="input"}}
+
+{{#if validated}}
+  {{#each signup.errors.address as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.address placeholder="street address" class="input"}}
+
+{{#if validated}}
+  {{#each signup.errors.city as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.city placeholder="city" class="input"}}
+
+{{#if validated}}
+  {{#each signup.errors.zip as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.zip placeholder="zip" class="input"}}
+
+{{#power-select options=countryList selected=selectedCountry matcher=countryMatcher onchange=(action "updateCountry") as |country|}}
+    {{country.country}}
+{{/power-select}}
+
+{{#if stateList}}
+  {{#if validated}}
+    {{#each signup.errors.state as |error|}}
+      <span class="error">*{{ error }}</span>
+    {{/each}}
+  {{/if}}
+  {{#power-select options=stateList selected=selectedState matcher=stateMatcher placeholder="state" onchange=(action "updateState") as |state|}}
+      {{state.name}}
+  {{/power-select}}
+{{/if}}
+
+<div class="buttons">
+  <button class="submit" {{ action 'validate' signup}}>next</button>
+</div>
+
+

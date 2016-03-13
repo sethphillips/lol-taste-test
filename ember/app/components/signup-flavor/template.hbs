@@ -1,0 +1,54 @@
+{{#if featured}}
+  <img src="assets/images/flavor_circle.png" class="flavor-circle">
+  <h5>Request a sample of our featured flavor</h5>
+  <div class="flavor-name">
+    {{ flavor.name }} {{{ if reg '<sup>&reg;</sup>' }}} {{{ if tm '<sup>&trade;</sup>' }}}
+  </div>
+  <div class="flavor-details">
+      {{#radio-button
+        value='8oz'
+        groupValue=flavor.size
+        changed='updateSize'
+      }}
+        8oz
+      {{/radio-button}}
+
+      {{#radio-button
+        value='1lb'
+        groupValue=flavor.size
+        changed='updateSize'
+      }}
+        1lb
+      {{/radio-button}}
+      <p class="text">
+        {{ text }}
+      </p>
+    </div>
+{{else}}
+  <div class="flavor-name {{ if selected 'selected' }}" {{ action "select" selected}}>
+    {{ flavor.number }} {{ flavor.name }} {{{ if reg '<sup>&reg;</sup>' }}} {{{ if tm '<sup>&trade;</sup>' }}} {{ flavor.sub }} {{{ if k '<img class="tiny-k" src="assets/images/k.jpg">' }}}
+  </div>
+  {{#liquid-if selected class='flavor-animation'}}
+    <div class="flavor-details">
+      {{#radio-button
+        value='8oz'
+        groupValue=flavor.size
+        changed='updateSize'
+      }}
+        8oz
+      {{/radio-button}}
+
+      {{#radio-button
+        value='1lb'
+        groupValue=flavor.size
+        changed='updateSize'
+      }}
+        1lb
+      {{/radio-button}}
+      <p class="text">
+        {{ text }}
+      </p>
+    </div>
+  {{/liquid-if}}
+{{/if}}
+
