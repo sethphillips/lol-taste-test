@@ -8,7 +8,6 @@ export default Ember.Component.extend({
   },
 
   _transition(){
-    console.log('transition from call')
     if(this.get('next') === 'a'){
       this.attrs.showA();
     }

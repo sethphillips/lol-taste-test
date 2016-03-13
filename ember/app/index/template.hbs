@@ -1,10 +1,10 @@
 <div class="container test-results">
 
   {{#liquid-if showSampleA class="results-animation" enableGrowth=false}}
-    {{ test-results model=model sample='a' transition=(action 'showCall' 'b') }}
+    {{ test-results model=model sample='a' transition=(action 'showCall' 'b') refresh=(route-action 'refresh')}}
   {{else}}
     {{#liquid-if showSampleB class="results-animation" enableGrowth=false}}
-      {{ test-results model=model sample='a' transition=(action 'showCall' 'a') }}
+      {{ test-results model=model sample='b' transition=(action 'showCall' 'a') refresh=(route-action 'refresh')}}
     {{else}}
       {{#liquid-if showCall class="results-animation" enableGrowth=false}}
         {{ test-call  showA=(action 'showA')  showB=(action 'showB') next=next}}

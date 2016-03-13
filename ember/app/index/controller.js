@@ -23,7 +23,6 @@ export default Ember.Controller.extend({
       this.set('showCall',true);
       this.set('showSampleA',false);
       this.set('showSampleB',false);
-      this.send('refresh');
     },
   }
 });
