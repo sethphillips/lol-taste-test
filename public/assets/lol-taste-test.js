@@ -4687,6 +4687,7 @@ define('lol-taste-test/router', ['exports', 'ember', 'lol-taste-test/config/envi
     this.route('index', { path: '/' });
     this.route('sample');
     this.route('signup');
+    this.route('signup-screensaver');
   });
 
   exports['default'] = Router;
@@ -5153,7 +5154,8 @@ define('lol-taste-test/signup/controller', ['exports', 'ember'], function (expor
     },
 
     _closeModal: function _closeModal() {
-      this.set('submitModalOpen', false);
+      // this.set('submitModalOpen',false);
+      _ember['default'].$(document).trigger('activity.idle');
     },
 
     actions: {
@@ -5197,6 +5199,25 @@ define('lol-taste-test/signup/route', ['exports', 'ember'], function (exports, _
 
     model: function model() {
       return this.store.createRecord('signup', { country: 'US' });
+    },
+
+    activate: function activate() {
+      var _this = this;
+
+      _ember['default'].$(document).on('activity.idle', function () {
+        _this.transitionTo('signup-screensaver');
+      });
+    },
+
+    deactivate: function deactivate() {
+      _ember['default'].$(document).off('activity.idle');
+    },
+
+    setupController: function setupController() {
+      this._super.apply(this, arguments);
+      _ember['default'].$(document).activity({
+        delay: 30000
+      });
     },
 
     actions: {
@@ -5507,6 +5528,104 @@ define("lol-taste-test/signup/template", ["exports"], function (exports) {
       statements: [["block", "liquid-if", [["get", "showForm", ["loc", [null, [17, 17], [17, 25]]]]], ["class", "form-animation"], 0, 1, ["loc", [null, [17, 4], [21, 18]]]], ["block", "if", [["get", "submitModalOpen", ["loc", [null, [25, 6], [25, 21]]]]], [], 2, null, ["loc", [null, [25, 0], [31, 7]]]]],
       locals: [],
       templates: [child0, child1, child2]
+    };
+  })());
+});
+define('lol-taste-test/signup-screensaver/route', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({});
+});
+define("lol-taste-test/signup-screensaver/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": {
+            "name": "triple-curlies"
+          },
+          "revision": "Ember@2.4.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 0
+            }
+          },
+          "moduleName": "lol-taste-test/signup-screensaver/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "screensaver");
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("img");
+          dom.setAttribute(el2, "src", "assets/images/signup_screensaver.jpg");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n  ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["wrong-type"]
+        },
+        "revision": "Ember@2.4.1",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 0
+          }
+        },
+        "moduleName": "lol-taste-test/signup-screensaver/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        dom.insertBoundary(fragment, 0);
+        dom.insertBoundary(fragment, null);
+        return morphs;
+      },
+      statements: [["block", "link-to", ["signup"], [], 0, null, ["loc", [null, [1, 0], [5, 12]]]]],
+      locals: [],
+      templates: [child0]
     };
   })());
 });
@@ -7907,7 +8026,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+11935b73"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+b7e99464"});
 }
 
 /* jshint ignore:end */

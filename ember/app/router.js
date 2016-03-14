@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('index',{path:'/'});
   this.route('sample');
   this.route('signup');
+  this.route('signup-screensaver');
 });
 
 export default Router;

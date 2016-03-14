@@ -84,6 +84,12 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
   src: url("fonts/din.otf"); }
 
+.screensaver {
+  width: 1080px;
+  height: 1920px; }
+  .screensaver img {
+    width: 100%; }
+
 .signup {
   width: 1080px;
   height: 1920px;

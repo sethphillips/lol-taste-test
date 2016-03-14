@@ -2367,7 +2367,7 @@ define('lol-taste-test/tests/signup/controller.jshint', ['exports'], function (e
   QUnit.module('JSHint - signup/controller.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'signup/controller.js should pass jshint.\nsignup/controller.js: line 38, col 88, Missing semicolon.\nsignup/controller.js: line 42, col 162, Missing semicolon.\nsignup/controller.js: line 46, col 53, Missing semicolon.\n\n3 errors');
+    assert.ok(false, 'signup/controller.js should pass jshint.\nsignup/controller.js: line 39, col 88, Missing semicolon.\nsignup/controller.js: line 43, col 162, Missing semicolon.\nsignup/controller.js: line 47, col 53, Missing semicolon.\n\n3 errors');
   });
 });
 define('lol-taste-test/tests/signup/route.jshint', ['exports'], function (exports) {
@@ -2377,6 +2377,15 @@ define('lol-taste-test/tests/signup/route.jshint', ['exports'], function (export
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'signup/route.js should pass jshint.');
+  });
+});
+define('lol-taste-test/tests/signup-screensaver/route.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - signup-screensaver/route.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'signup-screensaver/route.js should pass jshint.');
   });
 });
 define('lol-taste-test/tests/test-helper', ['exports', 'lol-taste-test/tests/helpers/resolver', 'ember-qunit'], function (exports, _lolTasteTestTestsHelpersResolver, _emberQunit) {
@@ -2620,6 +2629,27 @@ define('lol-taste-test/tests/unit/signup/route-test.jshint', ['exports'], functi
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/signup/route-test.js should pass jshint.');
+  });
+});
+define('lol-taste-test/tests/unit/signup-screensaver/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:signup-screensaver', 'Unit | Route | signup screensaver', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('lol-taste-test/tests/unit/signup-screensaver/route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/signup-screensaver/route-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/signup-screensaver/route-test.js should pass jshint.');
   });
 });
 define('lol-taste-test/tests/unit/taste-test/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
