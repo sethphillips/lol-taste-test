@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
   },
 
   _closeModal(){
-    // this.set('submitModalOpen',false);
+    this.set('submitModalOpen',false);
     Ember.$(document).trigger('activity.idle');
   },
 

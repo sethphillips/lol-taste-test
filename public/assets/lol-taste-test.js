@@ -5154,7 +5154,7 @@ define('lol-taste-test/signup/controller', ['exports', 'ember'], function (expor
     },
 
     _closeModal: function _closeModal() {
-      // this.set('submitModalOpen',false);
+      this.set('submitModalOpen', false);
       _ember['default'].$(document).trigger('activity.idle');
     },
 
@@ -8026,7 +8026,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+b7e99464"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+2c2ec57f"});
 }
 
 /* jshint ignore:end */
