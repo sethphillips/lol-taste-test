@@ -2095,6 +2095,60 @@ define('lol-taste-test/components/signup-form/component', ['exports', 'ember', '
       return -1;
     },
 
+    didInsertElement: function didInsertElement() {
+      var keyboard = _ember['default'].$('.input').keyboard({
+
+        acceptValid: true,
+
+        initialFocus: false,
+
+        alwaysOpen: false,
+
+        enterNavigation: true,
+
+        autoAccept: true,
+
+        tabNavigation: true,
+
+        usePreview: false,
+
+        // layout:'custom',
+
+        customLayout: {
+          'default': ['1 2 3 4 5 6 7 8 9 0 - = {bksp}', 'q w e r t y u i o p', "a s d f g h j k l ;", 'z x c v b n m . @', '.com .net .edu .gov', '{space} {accept}']
+
+        }
+
+      });
+
+      // accepted: (event, keyboard, el) => {
+      // let email = Ember.$(el).val()
+      // if(email){
+      //   let pdfs = this.get('pdfs').filterBy('send').mapBy('pdf');
+      //   this.attrs.email(email,pdfs);
+      //   keyboard.enabled = false;
+      //   keyboard.toggle();
+      // }
+      // },
+
+      // validate: function(e, key, el) {
+      // Accept only numeric
+      // var test = /.+@.+\..+/i.test(key);
+
+      // return test;
+      // },
+
+      // appendTo: '.keyboard-container',
+
+      // position:{
+      //   of: '.keyboard-container',
+      //   my:'center center',
+      //   at: 'center center',
+      // },
+
+      this.set('keyboard', keyboard);
+    },
+
     actions: {
       updateCountry: function updateCountry(country) {
         this.set('selectedCountry', country);
@@ -7849,7 +7903,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+376fbde7"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+c5ce1af0"});
 }
 
 /* jshint ignore:end */
