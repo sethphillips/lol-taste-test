@@ -47,6 +47,9 @@
     max-height: 1290px;
     overflow:scroll;
     padding:1em;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar { width: 0 !important }
+
     .input{
       display: block;
       width: 100%;

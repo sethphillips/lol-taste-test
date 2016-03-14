@@ -124,7 +124,10 @@ h1, h2, h3, h4, h5 {
   .signup .form-container {
     max-height: 1290px;
     overflow: scroll;
-    padding: 1em; }
+    padding: 1em;
+    -ms-overflow-style: none; }
+    .signup .form-container::-webkit-scrollbar {
+      width: 0 !important; }
     .signup .form-container .input {
       display: block;
       width: 100%;

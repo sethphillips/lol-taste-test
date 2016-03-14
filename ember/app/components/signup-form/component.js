@@ -80,6 +80,10 @@ export default Ember.Component.extend({
 
       },
 
+      willDestroyElement(){
+        this.get('keyboard').destroy();
+      }
+
       // accepted: (event, keyboard, el) => {
         // let email = Ember.$(el).val()
         // if(email){

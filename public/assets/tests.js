@@ -67,7 +67,7 @@ define('lol-taste-test/tests/components/signup-form/component.jshint', ['exports
   QUnit.module('JSHint - components/signup-form/component.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/signup-form/component.js should pass jshint.\ncomponents/signup-form/component.js: line 19, col 9, \'key\' is defined but never used.\ncomponents/signup-form/component.js: line 128, col 9, Missing semicolon.\ncomponents/signup-form/component.js: line 120, col 31, \'value\' is not defined.\n\n3 errors');
+    assert.ok(false, 'components/signup-form/component.js should pass jshint.\ncomponents/signup-form/component.js: line 19, col 9, \'key\' is defined but never used.\ncomponents/signup-form/component.js: line 132, col 9, Missing semicolon.\ncomponents/signup-form/component.js: line 124, col 31, \'value\' is not defined.\n\n3 errors');
   });
 });
 define('lol-taste-test/tests/components/taste-test/component.jshint', ['exports'], function (exports) {
