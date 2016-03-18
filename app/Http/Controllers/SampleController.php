@@ -11,8 +11,7 @@ class SampleController extends Controller
 {
     public function index()
     {
-      $foo = 'bar';
-      $samples = Sample::all();
+      $samples = Sample::today()->get();
 
       return ['samples'=>$samples];
     }
