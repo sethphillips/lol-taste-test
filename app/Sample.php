@@ -16,6 +16,6 @@ class Sample extends Model
 
     public function scopeRecent($query)
     {
-      return $query->where('created_at', '>',Carbon::now()->subDays(5));
+      return $query->where('created_at', '>',Carbon::now()->subDays(5)->toDateString());
     }
 }
