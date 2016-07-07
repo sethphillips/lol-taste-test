@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   i18n: Ember.inject.service(),
 
   model(){
-    return this.store.createRecord('sample');
+    return this.store.createRecord('sample',{language:'en'});
   },
 
   actions:{
