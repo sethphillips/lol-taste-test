@@ -25,6 +25,7 @@ Route::group(['middleware' => 'web'], function () {
 Route::group(['prefix'=>'api'],function(){
   Route::resource('samples','SampleController');
   Route::resource('signups','SignupController');
+  Route::get('badgescan','BadgeScanController@scan');
 });
 
 

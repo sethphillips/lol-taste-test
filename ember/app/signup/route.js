@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 
   activate(){
     Ember.$(document).on('activity.idle', ()=>{
-        this.transitionTo('signup-screensaver');
+      this.transitionTo('signup-screensaver');
     });
   },
 

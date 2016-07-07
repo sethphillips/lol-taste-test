@@ -6,6 +6,28 @@
   }
 }
 
+.information-cutsheet{
+  position: absolute;
+  top:2%;
+  right:7%;
+  z-index: 100;
+  .button{
+    font-size:1em;
+    border-radius:5px;
+    border: 3px solid $orange;
+    background-color: white;
+    padding:.2em .5em;
+  }
+}
+
+.specifications-modal{
+  width: 90%;
+  height: 90%;
+  embed{
+
+  }
+}
+
 .signup{
   width: 1080px;
   height: 1920px;
@@ -105,7 +127,7 @@
 
   .flavor-list-animate{
     margin-bottom:1em;
-
+    max-width: 100%;
   }
 
   .flavor-list{
@@ -114,7 +136,7 @@
     border-radius: 10px;
     font-size:.8em;
     .fa{
-      float:right;
+      // float:right;
     }
     h4{
       cursor:pointer;
@@ -127,7 +149,7 @@
 
   .flavor{
     cursor:pointer;
-    margin:.25em 0;
+    margin:.5em 0;
 
     &.featured{
       border:4px solid $orange;
@@ -143,12 +165,18 @@
       width: 15%;
     }
     .flavor-name{
+      display: inline-block;
       .tiny-k{
         height: .8em;
       }
       &.selected{
         color:$orange;
       }
+    }
+    .flavor-modal-trigger{
+      display: inline-block;
+      color:$orange;
+      // padding-right:1em;
     }
     .flavor-details{
       padding:.25em 1em;
@@ -159,6 +187,16 @@
     }
   }
 }
+
+.flavor-detail-modal{
+  width: 50%;
+  td:first-child{
+    // text-align: right;
+  }
+}
+
+
+
 
 .submit-message{
   font-size:2em;

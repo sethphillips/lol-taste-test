@@ -64,6 +64,7 @@ export default Ember.Component.extend({
 
       usePreview:false,
 
+      appendLocally: true,
       // layout:'custom',
 
 
@@ -80,9 +81,7 @@ export default Ember.Component.extend({
 
       },
 
-      willDestroyElement(){
-        this.get('keyboard').destroy();
-      }
+
 
       // accepted: (event, keyboard, el) => {
         // let email = Ember.$(el).val()
@@ -114,6 +113,10 @@ export default Ember.Component.extend({
     this.set('keyboard', keyboard );
   },
 
+  willDestroyElement(){
+    this.get('keyboard').getkeyboard().destroy();
+  },
+
   actions:{
     updateCountry(country){
       this.set('selectedCountry',country);
@@ -128,7 +131,6 @@ export default Ember.Component.extend({
           this.attrs.next(signup);
       },()=>{
         this.set('validated',true);
-
       })
     }
   }

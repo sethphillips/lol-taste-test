@@ -15,9 +15,8 @@ export default Ember.Component.extend({
     }
     else{
       flavor = this.get('store').createRecord('flavor',{
-        name:this.get('name'),
-        sub:this.get('sub'),
-        number: this.get('number'),
+        name:this.get('item.Name'),
+        number: this.get('item.SKU'),
         size:'8oz',
       });
     }
@@ -41,6 +40,14 @@ export default Ember.Component.extend({
 
     updateSize(size){
       this.set('flavor.size',size)
+    },
+
+    openModal(){
+      this.set('detailsOpen',true);
+    },
+
+    closeModal(){
+      this.set('detailsOpen',false);
     },
   }
 });

@@ -2,7 +2,7 @@
   <img src="assets/images/flavor_circle.png" class="flavor-circle">
   <h5>Request a sample of our featured flavor</h5>
   <div class="flavor-name">
-    {{ flavor.name }} {{{ if reg '<sup>&reg;</sup>' }}} {{{ if tm '<sup>&trade;</sup>' }}}
+    {{ flavor.name }} {{{ if item.reg '<sup>&reg;</sup>' }}} {{{ if item.tm '<sup>&trade;</sup>' }}}
   </div>
   <div class="flavor-details">
       {{#radio-button
@@ -21,12 +21,13 @@
         1lb
       {{/radio-button}}
       <p class="text">
-        {{ text }}
+        {{ item.Description }}
       </p>
     </div>
 {{else}}
+  <div class="flavor-modal-trigger" {{ action 'openModal' }}>{{ fa-icon 'info-circle' }}</div>
   <div class="flavor-name {{ if selected 'selected' }}" {{ action "select" selected}}>
-    {{ flavor.number }} {{ flavor.name }} {{{ if reg '<sup>&reg;</sup>' }}} {{{ if tm '<sup>&trade;</sup>' }}} {{ flavor.sub }} {{{ if k '<img class="tiny-k" src="assets/images/k.jpg">' }}}
+    {{ flavor.number }} {{ flavor.name }} {{{ if item.reg '<sup>&reg;</sup>' }}} {{{ if item.tm '<sup>&trade;</sup>' }}} {{{ if item.k '<img class="tiny-k" src="assets/images/k.jpg">' }}}
   </div>
   {{#liquid-if selected class='flavor-animation'}}
     <div class="flavor-details">
@@ -46,9 +47,53 @@
         1lb
       {{/radio-button}}
       <p class="text">
-        {{ text }}
+        {{ flavor.text }}
       </p>
     </div>
   {{/liquid-if}}
+{{/if}}
+
+{{#if detailsOpen}}
+  {{#tether-dialog
+    close=(action 'closeModal')
+    translucentOverlay=true
+    target='.container'
+    targetAttachment='middle center'
+    attachment='middle center'
+    container-class="flavor-detail-modal"
+  }}
+    <h3>{{ item.Name }}</h3>
+    <p>{{ item.Description }}</p>
+    <table>
+      <tr>
+        <td>Calories:</td>
+        <td>{{ item.Calories }}</td>
+      </tr>
+      <tr>
+        <td>Protein:</td>
+        <td>{{ item.Protein }}</td>
+      </tr>
+      <tr>
+        <td>Total Carbs:</td>
+        <td>{{ item.TotalCarbohydrates }}</td>
+      </tr>
+      <tr>
+        <td>Total Sugar:</td>
+        <td>{{ item.TotalSugar }}</td>
+      </tr>
+      <tr>
+        <td>Total Fat:</td>
+        <td>{{ item.TotalFat }}</td>
+      </tr>
+      <tr>
+        <td>Calcium:</td>
+        <td>{{ item.Calcium }}</td>
+      </tr>
+      <tr>
+        <td>Sodium:</td>
+        <td>{{ item.Sodium }}</td>
+      </tr>
+    </table>
+  {{/tether-dialog}}
 {{/if}}
 

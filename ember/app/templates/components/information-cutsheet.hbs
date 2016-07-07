@@ -1,0 +1,15 @@
+<button class="button" {{ action 'openModal' }}>Full Product Specifications</button>
+
+{{#if modalOpen}}
+  {{#tether-dialog
+    translucentOverlay=true
+    close=(action 'closeModal')
+    target='.container'
+    targetAttachment='middle center'
+    attachment='middle center'
+    container-class='specifications-modal'
+  }}
+    <embed src="/pdf/information-cutsheet.pdf" width="100%" height="100%">
+    {{!-- <canvas id="pdf-canvas"></canvas> --}}
+  {{/tether-dialog}}
+{{/if}}
