@@ -55,20 +55,29 @@
 {{/if}}
 {{ input value=signup.zip placeholder="zip" class="input"}}
 
-{{#power-select options=countryList selected=selectedCountry matcher=countryMatcher onchange=(action "updateCountry") as |country|}}
+{{ input value=signup.country placeholder="country" class="input" }}
+
+{{#if validated}}
+  {{#each signup.errors.state as |error|}}
+    <span class="error">*{{ error }}</span>
+  {{/each}}
+{{/if}}
+{{ input value=signup.state placeholder="state" class="input" }}
+
+{{!-- {{#power-select options=countryList selected=selectedCountry matcher=countryMatcher onchange=(action "updateCountry") as |country|}}
     {{country.country}}
 {{/power-select}}
 
-{{#if stateList}}
   {{#if validated}}
     {{#each signup.errors.state as |error|}}
       <span class="error">*{{ error }}</span>
     {{/each}}
   {{/if}}
+{{#if stateList}}
   {{#power-select options=stateList selected=selectedState matcher=stateMatcher placeholder="state" onchange=(action "updateState") as |state|}}
       {{state.name}}
   {{/power-select}}
-{{/if}}
+{{/if}} --}}
 
 <div class="buttons">
   <button class="submit" {{ action 'validate' signup}}>next</button>

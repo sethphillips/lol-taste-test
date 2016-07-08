@@ -54,8 +54,6 @@ export default Ember.Component.extend({
 
       initialFocus:false,
 
-      alwaysOpen:false,
-
       enterNavigation:true,
 
       autoAccept:true,
@@ -64,9 +62,9 @@ export default Ember.Component.extend({
 
       usePreview:false,
 
-      appendLocally: true,
-      // layout:'custom',
+      reposition:true,
 
+      appendTo:'.container',
 
       customLayout:{
         'default':
@@ -102,11 +100,13 @@ export default Ember.Component.extend({
 
       // appendTo: '.keyboard-container',
 
-      // position:{
-      //   of: '.keyboard-container',
-      //   my:'center center',
-      //   at: 'center center',
-      // },
+      position:{
+        of: '.form-container',
+        my:'center top',
+        at: 'center bottom',
+        at2: 'center bottom',
+        collision: 'fit fit',
+      },
 
     });
 

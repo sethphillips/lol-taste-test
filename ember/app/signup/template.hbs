@@ -22,6 +22,8 @@
       {{ signup-flavor-list add=(action 'addFlavor') remove=(action 'removeFlavor') back=(action 'switchToForm') save=(action 'save') signup=model}}
     {{/liquid-if}}
   </div>
+
+  <button class="badge-scan-button" {{ action 'openScanModal' }}>To Fill Out This Form by Scanning Your Badge, Tap Here</button>
 </div>
 
 {{#if submitModalOpen}}
@@ -30,4 +32,18 @@
       {{ submitMessage }}
     </div>
   {{/modal-dialog}}
+{{/if}}
+
+{{#if scanModalOpen}}
+  {{#tether-dialog
+    close=(action 'closeScanModal')
+    container-class="badge-scan-modal"
+    translucent-overlay=true
+  }}
+    Scan Your Badge Now
+    {{#if scanError}}
+      <p>{{ scanError }}</p>
+    {{/if}}
+    {{ input value=scanValue enter="submitScan" class="badge-scan-input"}}
+  {{/tether-dialog}}
 {{/if}}
