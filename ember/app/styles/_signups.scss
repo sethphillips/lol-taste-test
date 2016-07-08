@@ -198,11 +198,12 @@
 .badge-scan-button{
   font-size: 1.5em;
   background-color: transparent;
-  border:10px solid $orange;
+  border:5px solid $orange;
   width: 30%;
   position: absolute;
   right: 7%;
-  top:50%;
+  top:45%;
+  border-radius: 15px;
 }
 
 .badge-scan-modal{
