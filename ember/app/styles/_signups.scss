@@ -208,10 +208,12 @@
 
 .badge-scan-modal{
   font-size:2em;
-  padding: 2em;
   color:$orange;
   width:70%;
   text-align: center;
+  .modal-content{
+    padding: 2em;
+  }
   input{
     height:0px;
     width:0px;

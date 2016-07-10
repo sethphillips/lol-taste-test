@@ -40,10 +40,12 @@
     container-class="badge-scan-modal"
     translucent-overlay=true
   }}
-    Scan Your Badge Now
-    {{#if scanError}}
-      <p>{{ scanError }}</p>
-    {{/if}}
-    {{ input value=scanValue enter="submitScan" class="badge-scan-input"}}
+    <div class="modal-content" {{ action (action 'closeScanModal') }}>
+      Scan Your Badge Now
+      {{#if scanError}}
+        <p>{{ scanError }}</p>
+      {{/if}}
+      {{ input value=scanValue enter="submitScan" class="badge-scan-input"}}
+    </div>
   {{/tether-dialog}}
 {{/if}}
