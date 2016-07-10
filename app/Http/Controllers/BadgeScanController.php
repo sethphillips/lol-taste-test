@@ -22,32 +22,32 @@ class BadgeScanController extends Controller
 
       $response = json_decode($json,true);
 
-      $response = [
-        'Success'=> true,
-        'LeadInfo'=> [
-          'LeadID'=> "",
-          'CapturedDate'=> "",
-          'CapturedBy'=> "",
-          'ConnectKey'=> "",
-          'FirstName'=> "Seth",
-          'LastName'=> "Phillips",
-          'Title'=> "Good Guy",
-          'Company'=> "TRMS",
-          'Company2'=> "",
-          'Address'=> "1900 East Medicine Lake Blvd",
-          'Address2'=> "Downstairs",
-          'Address3'=> "",
-          'City'=> "Plymouth",
-          'StateCode'=> "MN",
-          'ZipCode'=> "55441",
-          'CountryCode'=> "USA",
-          'Email'=> "seth.phillips@trms.com",
-          'Phone'=> "952-380-6554",
-          'PhoneExtension'=> "232",
-          'Fax'=> "",
-          'Notes'=> ""
-        ],
-      ];
+      // $response = [
+      //   'Success'=> true,
+      //   'LeadInfo'=> [
+      //     'LeadID'=> "",
+      //     'CapturedDate'=> "",
+      //     'CapturedBy'=> "",
+      //     'ConnectKey'=> "",
+      //     'FirstName'=> "Seth",
+      //     'LastName'=> "Phillips",
+      //     'Title'=> "Good Guy",
+      //     'Company'=> "TRMS",
+      //     'Company2'=> "",
+      //     'Address'=> "1900 East Medicine Lake Blvd",
+      //     'Address2'=> "Downstairs",
+      //     'Address3'=> "",
+      //     'City'=> "Plymouth",
+      //     'StateCode'=> "MN",
+      //     'ZipCode'=> "55441",
+      //     'CountryCode'=> "USA",
+      //     'Email'=> "seth.phillips@trms.com",
+      //     'Phone'=> "952-380-6554",
+      //     'PhoneExtension'=> "232",
+      //     'Fax'=> "",
+      //     'Notes'=> ""
+      //   ],
+      // ];
 
       return $response;
     }
