@@ -14,7 +14,6 @@ export default Ember.Component.extend({
   fact: Ember.computed(function(){
     let facts = this.get('facts');
     let random = Math.floor(Math.random() * facts.length);
-    console.info(random);
     return facts[random];
   }),
 
