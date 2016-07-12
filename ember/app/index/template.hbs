@@ -1,16 +1,8 @@
 <div class="container test-results">
 
-  {{#liquid-if showSampleA class="results-animation" enableGrowth=false}}
-    {{ test-results model=model sample='a' transition=(action 'showCall' 'b') refresh=(route-action 'refresh')}}
-  {{else}}
-    {{#liquid-if showSampleB class="results-animation" enableGrowth=false}}
-      {{ test-results model=model sample='b' transition=(action 'showCall' 'a') refresh=(route-action 'refresh')}}
-    {{else}}
-      {{#liquid-if showCall class="results-animation" enableGrowth=false}}
-        {{ test-call  showA=(action 'showA')  showB=(action 'showB') next=next}}
-      {{/liquid-if}}
-    {{/liquid-if}}
-  {{/liquid-if}}
+  {{#liquid-bind screen class="results-animations" use="toRight" enableGrowth=false as |screen|}}
+    {{ component screen model=model sample=sample transition=(action closure) refresh=(route-action 'refresh')}}
+  {{/liquid-bind}}
 
   <img src="assets/images/logo_small.png" alt="" class="lower-logo">
 </div>

@@ -8,11 +8,6 @@ export default Ember.Component.extend({
   },
 
   _transition(){
-    if(this.get('next') === 'a'){
-      this.attrs.showA();
-    }
-    if(this.get('next') === 'b'){
-      this.attrs.showB();
-    }
+    this.attrs.transition();
   },
 });
