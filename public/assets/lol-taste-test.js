@@ -6378,7 +6378,7 @@ define("lol-taste-test/signup/template", ["exports"], function (exports) {
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("button");
         dom.setAttribute(el2, "class", "badge-scan-button");
-        var el3 = dom.createTextNode("To Fill Out This Form by Scanning Your Badge, Tap Here");
+        var el3 = dom.createTextNode("To complete form by scanning your badge, tap here.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -9043,7 +9043,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+664e3e5e"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+386b83f9"});
 }
 
 /* jshint ignore:end */
