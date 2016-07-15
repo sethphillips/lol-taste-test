@@ -475,7 +475,10 @@ h1, h2, h3, h4, h5 {
         color: #f8800b; }
     .signup .flavor .flavor-modal-trigger {
       display: inline-block;
-      color: #f8800b; }
+      color: #f8800b;
+      font-size: 1.5em;
+      vertical-align: sub;
+      padding-right: .25em; }
     .signup .flavor .flavor-details {
       padding: .25em 1em; }
       .signup .flavor .flavor-details .text {

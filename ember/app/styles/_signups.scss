@@ -176,7 +176,9 @@
     .flavor-modal-trigger{
       display: inline-block;
       color:$orange;
-      // padding-right:1em;
+      font-size:1.5em;
+      vertical-align: sub;
+      padding-right:.25em;
     }
     .flavor-details{
       padding:.25em 1em;
