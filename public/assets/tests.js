@@ -2543,7 +2543,7 @@ define('lol-taste-test/tests/signup/controller.jshint', ['exports'], function (e
   QUnit.module('JSHint - signup/controller.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'signup/controller.js should pass jshint.\nsignup/controller.js: line 62, col 88, Missing semicolon.\nsignup/controller.js: line 66, col 162, Missing semicolon.\nsignup/controller.js: line 70, col 53, Missing semicolon.\nsignup/controller.js: line 98, col 56, Missing semicolon.\n\n4 errors');
+    assert.ok(false, 'signup/controller.js should pass jshint.\nsignup/controller.js: line 62, col 88, Missing semicolon.\nsignup/controller.js: line 66, col 162, Missing semicolon.\nsignup/controller.js: line 70, col 53, Missing semicolon.\nsignup/controller.js: line 99, col 56, Missing semicolon.\n\n4 errors');
   });
 });
 define('lol-taste-test/tests/signup/route.jshint', ['exports'], function (exports) {
