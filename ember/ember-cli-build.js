@@ -7,6 +7,9 @@ module.exports = function(defaults) {
     babel: {
       includePolyfill: true,
     },
+    fingerprint:{
+      generateAssetMap: true,
+    },
   });
 
   app.import('bower_components/jquery-ui/jquery-ui.js');
