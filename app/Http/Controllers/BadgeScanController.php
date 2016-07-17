@@ -18,7 +18,7 @@ class BadgeScanController extends Controller
 
       $actcode = config('badgescan.actcode');
 
-      $json = file_get_contents("$baseUrl?apikey=$apikey&actcode=$actcode&badgeid=$badgeID");
+      $json = file_get_contents("$baseUrl?apikey=$apikey&actcode=$actcode&badgeid=11276$badgeID");
 
       $response = json_decode($json,true);
 

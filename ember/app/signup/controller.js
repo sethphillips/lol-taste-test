@@ -83,13 +83,12 @@ export default Ember.Controller.extend({
     },
 
     submitScan(value){
+      this.set('scanValue','');
       this.set('scanError',undefined);
-      let parts = value.split('/');
-      let badgeid = parts[4];
       this.set('scanError', 'Badge scanned please wait...');
       this.get('ajax').request('/api/badgescan',{
         method: 'GET',
-        data: {badgeid},
+        data: {badgeid:value},
         contentType:'text/plain',
       }).then((response)=>{
         if(response.Success){

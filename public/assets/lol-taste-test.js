@@ -5890,13 +5890,12 @@ define('lol-taste-test/signup/controller', ['exports', 'ember'], function (expor
       submitScan: function submitScan(value) {
         var _this2 = this;
 
+        this.set('scanValue', '');
         this.set('scanError', undefined);
-        var parts = value.split('/');
-        var badgeid = parts[4];
         this.set('scanError', 'Badge scanned please wait...');
         this.get('ajax').request('/api/badgescan', {
           method: 'GET',
-          data: { badgeid: badgeid },
+          data: { badgeid: value },
           contentType: 'text/plain'
         }).then(function (response) {
           if (response.Success) {
@@ -9044,7 +9043,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+7488a4b8"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+9f60be10"});
 }
 
 /* jshint ignore:end */
