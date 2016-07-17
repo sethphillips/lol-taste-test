@@ -1,6 +1,6 @@
 <div class="container test-results">
 
-  {{#liquid-bind screen class="results-animations" use="toRight" enableGrowth=false as |screen|}}
+  {{#liquid-bind screen class="results-animation" enableGrowth=false as |screen|}}
     {{ component screen model=model sample=sample transition=(action closure) refresh=(route-action 'refresh')}}
   {{/liquid-bind}}
 

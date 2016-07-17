@@ -10,11 +10,9 @@ export default function(){
 
    this.transition(
     this.hasClass('results-animation'),
-    this.fromValue(false),
-    this.toValue(true),
     this.use('toRight', {duration:1000}),
     this.reverse('toRight',{duration:1000}),
-    this.includingInitialRender()
+    // this.includingInitialRender()
   );
 
   this.transition(
