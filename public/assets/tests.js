@@ -2583,7 +2583,7 @@ define('lol-taste-test/tests/transitions.jshint', ['exports'], function (exports
   QUnit.module('JSHint - transitions.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'transitions.js should pass jshint.\ntransitions.js: line 25, col 3, Unexpected \')\'.\ntransitions.js: line 25, col 3, Expected an identifier and instead saw \')\'.\ntransitions.js: line 25, col 4, Expected \')\' and instead saw \';\'.\ntransitions.js: line 25, col 5, Missing semicolon.\ntransitions.js: line 32, col 3, Unexpected \')\'.\ntransitions.js: line 32, col 3, Expected an identifier and instead saw \')\'.\ntransitions.js: line 32, col 4, Expected \')\' and instead saw \';\'.\ntransitions.js: line 32, col 5, Missing semicolon.\n\n8 errors');
+    assert.ok(false, 'transitions.js should pass jshint.\ntransitions.js: line 16, col 3, Unexpected \')\'.\ntransitions.js: line 16, col 3, Expected an identifier and instead saw \')\'.\ntransitions.js: line 16, col 4, Expected \')\' and instead saw \';\'.\ntransitions.js: line 16, col 5, Missing semicolon.\ntransitions.js: line 23, col 3, Unexpected \')\'.\ntransitions.js: line 23, col 3, Expected an identifier and instead saw \')\'.\ntransitions.js: line 23, col 4, Expected \')\' and instead saw \';\'.\ntransitions.js: line 23, col 5, Missing semicolon.\ntransitions.js: line 30, col 3, Unexpected \')\'.\ntransitions.js: line 30, col 3, Expected an identifier and instead saw \')\'.\ntransitions.js: line 30, col 4, Expected \')\' and instead saw \';\'.\ntransitions.js: line 30, col 5, Missing semicolon.\n\n12 errors');
   });
 });
 define('lol-taste-test/tests/unit/adapters/application-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {

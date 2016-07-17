@@ -4939,7 +4939,7 @@ define("lol-taste-test/index/template", ["exports"], function (exports) {
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         return morphs;
       },
-      statements: [["block", "liquid-bind", [["get", "screen", ["loc", [null, [3, 17], [3, 23]]]]], ["class", "results-animations", "use", "toRight", "enableGrowth", false], 0, null, ["loc", [null, [3, 2], [5, 18]]]]],
+      statements: [["block", "liquid-bind", [["get", "screen", ["loc", [null, [3, 17], [3, 23]]]]], ["class", "results-animation", "enableGrowth", false], 0, null, ["loc", [null, [3, 2], [5, 18]]]]],
       locals: [],
       templates: [child0]
     };
@@ -8945,8 +8945,9 @@ define('lol-taste-test/transitions', ['exports'], function (exports) {
   exports['default'] = function () {
     this.transition(this.hasClass('test-animation'), this.fromValue(true), this.toValue(false), this.use('toRight', { duration: 500 }), this.reverse('toRight', { duration: 500 }), this.includingInitialRender());
 
-    this.transition(this.hasClass('results-animation'), this.fromValue(false), this.toValue(true), this.use('toRight', { duration: 1000 }), this.reverse('toRight', { duration: 1000 }), this.includingInitialRender());
+    this.transition(this.hasClass('results-animation'), this.use('toRight', { duration: 1000 }), this.reverse('toRight', { duration: 1000 }));
 
+    // this.includingInitialRender()
     this.transition(this.hasClass('flavor-animation'), this.toValue(true), this.use('toDown'), this.reverse('toUp'));
 
     this.transition(this.hasClass('form-animation'), this.toValue(false), this.use('toLeft'), this.reverse('toRight'));
@@ -9043,7 +9044,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+37492966"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+c775f1e2"});
 }
 
 /* jshint ignore:end */
