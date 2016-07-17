@@ -5288,7 +5288,10 @@ define('lol-taste-test/models/signup', ['exports', 'ember-data', 'ember-validati
         presence: true
 
       },
+      // title:{
+      //   presence:true,
 
+      // },
       email: {
         presence: true
 
@@ -6447,7 +6450,7 @@ define("lol-taste-test/signup-screensaver/template", ["exports"], function (expo
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("img");
-          dom.setAttribute(el2, "src", "assets/images/signup_screensaver.jpg");
+          dom.setAttribute(el2, "src", "assets/images/signup_screensaver2.jpg");
           dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("\n  ");
           dom.appendChild(el1, el2);
@@ -9041,7 +9044,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+1b0b63b9"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+fd41e18a"});
 }
 
 /* jshint ignore:end */

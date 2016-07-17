@@ -2489,7 +2489,7 @@ define('lol-taste-test/tests/models/signup.jshint', ['exports'], function (expor
   QUnit.module('JSHint - models/signup.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'models/signup.js should pass jshint.\nmodels/signup.js: line 37, col 31, \'validator\' is defined but never used.\n\n1 error');
+    assert.ok(false, 'models/signup.js should pass jshint.\nmodels/signup.js: line 40, col 31, \'validator\' is defined but never used.\n\n1 error');
   });
 });
 define('lol-taste-test/tests/resolver.jshint', ['exports'], function (exports) {
