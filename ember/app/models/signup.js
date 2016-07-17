@@ -11,10 +11,7 @@ export default DS.Model.extend(EmberValidations,{
       presence:true,
 
     },
-    title:{
-      presence:true,
 
-    },
     email:{
       presence:true,
 

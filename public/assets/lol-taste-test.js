@@ -5288,10 +5288,7 @@ define('lol-taste-test/models/signup', ['exports', 'ember-data', 'ember-validati
         presence: true
 
       },
-      title: {
-        presence: true
 
-      },
       email: {
         presence: true
 
@@ -9044,7 +9041,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+c775f1e2"});
+  require("lol-taste-test/app")["default"].create({"name":"lol-taste-test","version":"0.0.0+1b0b63b9"});
 }
 
 /* jshint ignore:end */
