@@ -10,7 +10,7 @@ class BadgeScanController extends Controller
 {
     public function scan(Request $request)
     {
-      $badgeID = $request->badgeid;
+      $barcode = $request->barcode;
 
       $baseUrl = 'https://developer.experientswap.com/APIv1/LeadInfo';
 
@@ -18,7 +18,7 @@ class BadgeScanController extends Controller
 
       $actcode = config('badgescan.actcode');
 
-      $json = file_get_contents("$baseUrl?apikey=$apikey&actcode=$actcode&badgeid=11276$badgeID");
+      $json = file_get_contents("$baseUrl?apikey=$apikey&actcode=$actcode&badgeid=11276?barcode=$barcode");
 
       $response = json_decode($json,true);
 

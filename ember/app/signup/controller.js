@@ -59,15 +59,15 @@ export default Ember.Controller.extend({
         this._toggleElements();
         this.store.unloadAll();
         this.send('refreshRoute');
-        this.set('submitMessage',"Thank you, Please check out our presentation times.")
+        this.set('submitMessage',"Thank you, Please check out our presentation times.");
         this.set('submitModalOpen',true);
       })
       .catch(()=>{
-        this.set('submitMessage',"Sorry, somethign went wrong.  Check with an associate to complete your request, also please check out our presentation times.")
+        this.set('submitMessage',"Sorry, somethign went wrong.  Check with an associate to complete your request, also please check out our presentation times.");
         this.set('submitModalOpen',true);
       })
       .finally(()=>{
-        Ember.run.later(this, this._closeModal,7000)
+        Ember.run.later(this, this._closeModal,7000);
       });
     },
 
@@ -88,14 +88,14 @@ export default Ember.Controller.extend({
       this.set('scanError', 'Badge scanned please wait...');
       this.get('ajax').request('/api/badgescan',{
         method: 'GET',
-        data: {badgeid:value},
+        data: {barcode:value},
         contentType:'text/plain',
       }).then((response)=>{
         if(response.Success){
           this._fillInModel(response.LeadInfo);
         }
         else{
-          throw new Error(response.Messages[0].Message)
+          throw new Error(response.Messages[0].Message);
         }
         this.set('scanModalOpen',false);
       }).catch((reason)=>{
