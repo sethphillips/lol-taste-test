@@ -17,8 +17,8 @@ class BadgeScanController extends Controller
       $apikey = config('badgescan.apikey');
 
       $actcode = config('badgescan.actcode');
-
-      $json = file_get_contents("$baseUrl?apikey=$apikey&actcode=$actcode&badgeid=52591&barcode=$barcode");
+      $json = $this->getSSLPage("$baseUrl?apikey=$apikey&actcode=$actcode&badgeid=52591&barcode=$barcode");
+      // $json = file_get_contents("$baseUrl?apikey=$apikey&actcode=$actcode&badgeid=52591&barcode=$barcode");
 
       $response = json_decode($json,true);
 
@@ -51,4 +51,19 @@ class BadgeScanController extends Controller
 
       return $response;
     }
+
+    private function getSslPage($url) {
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+      curl_setopt($ch, CURLOPT_HEADER, false);
+      curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_REFERER, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+      $result = curl_exec($ch);
+      curl_close($ch);
+      return $result;
 }
+}
+
+
