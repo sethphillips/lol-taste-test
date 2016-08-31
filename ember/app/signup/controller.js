@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
 
-  showForm: true,
-  showFlavors: false,
+  showForm: false,
+  showFlavors: true,
 
   _toggleElements(){
     this.toggleProperty('showForm');
