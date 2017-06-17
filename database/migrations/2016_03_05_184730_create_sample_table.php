@@ -14,10 +14,15 @@ class CreateSampleTable extends Migration
     {
         Schema::create('samples',function(Blueprint $table){
             $table->increments('id');
-            $table->boolean('tasteA')->default(false);
-            $table->boolean('tasteB')->default(false);
-            $table->boolean('colorA')->default(false);
-            $table->boolean('colorB')->default(false);
+            $table->boolean('boldA')->default(false);
+            $table->boolean('boldB')->default(false);
+            $table->boolean('boldC')->default(false);
+            $table->boolean('cheddarA')->default(false);
+            $table->boolean('cheddarB')->default(false);
+            $table->boolean('cheddarC')->default(false);
+            $table->boolean('mouthfeelA')->default(false);
+            $table->boolean('mouthfeelB')->default(false);
+            $table->boolean('mouthfeelC')->default(false);
             $table->timestamps();
         });
     }

@@ -2,42 +2,65 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  i18n: Ember.inject.service(),
+  boldTestTaken: Ember.computed.or('model.boldA','model.boldB','model.boldC'),
+  cheddarTestTaken: Ember.computed.or('model.cheddarA','model.cheddarB','model.cheddarC'),
+  mouthfeelTestTaken: Ember.computed.or('model.mouthfeelA','model.mouthfeelB','model.mouthfeelC'),
 
-  tasteAnswered: Ember.computed.or('model.tasteA','model.tasteB'),
-  colorAnswered: Ember.computed.or('model.colorA','model.colorB'),
+  currentTest: Ember.computed('start','boldTestTaken','mouthfeelTestTaken',function(){
+    if(this.get('start') === false){
+      return {image:'/assets/images/samples/sample_start.jpg'};
+    }
 
-  showLanguage: Ember.computed('tasteAnswered','colorAnswered','model.language',function(){
-    return !!(!this.get('tasteAnswered') && !this.get('colorAnswered') && !this.get('model.language'));
-  }),
-
-  showTaste: Ember.computed('showLanguage','tasteAnswered',function(){
-    return !!(!this.get('showLanguage') && !this.get('tasteAnswered'));
-  }),
-
-  showColor: Ember.computed('showLanguage','showResults','tasteAnswered',function(){
-    return !!(!this.get('showLanguage') && !this.get('showResults') && this.get('tasteAnswered'));
-  }),
-  showResults: Ember.computed('tasteAnswered','colorAnswered',function(){
-    return !!(this.get('tasteAnswered') && this.get('colorAnswered'));
+    if(this.get('mouthfeelTestTaken')){
+      return {
+        image:'/assets/images/samples/sample_cheddar.jpg',
+        color:'#FDD800',
+        choices:[
+          {label:'A',value:'cheddarA'},
+          {label:'B',value:'cheddarB'},
+          {label:'C',value:'cheddarC'},
+        ]
+      }
+    }
+    if(this.get('boldTestTaken')){
+      return {
+        image:'/assets/images/samples/sample_mouthfeel.jpg',
+        color:'#0EBFD7',
+        choices:[
+          {label:'A',value:'mouthfeelA'},
+          {label:'B',value:'mouthfeelB'},
+          {label:'C',value:'mouthfeelC'},
+        ]
+      }
+    }
+    return {
+      image:'/assets/images/samples/sample_bold.jpg',
+      color:'#EC1F2F',
+      choices:[
+        {label:'A',value:'boldA'},
+        {label:'B',value:'boldB'},
+        {label:'C',value:'boldC'},
+      ]
+    }
   }),
 
   actions:{
-    chooseLanguage(language){
-      this.set('model.language',language);
-      this.set('i18n.locale', language);
+    start(boolean){
+      this.set('start',true);
     },
-    chooseTaste(sample,choice){
-      sample.set(`taste${choice}`,true);
+    choose(value){
+      let model = this.get('model');
+      model.set(value,true);
+      if(this.get('cheddarTestTaken')){
+        model.save()
+          .then(()=>{
+            this.set('start',false);
+            this.send('resetTest');
+          })
+          .catch(()=>{
+            window.alert('sorry somethign went wrong, please see a representative in the booth');
+          });
+      }
     },
-
-    chooseColor(sample,choice){
-      sample.set(`color${choice}`,true);
-      sample.save()
-        .then(()=>{
-          Ember.Logger.info('Successfully Submitted');
-        })
-    },
-
   }
 });

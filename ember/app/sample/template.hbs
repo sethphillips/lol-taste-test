@@ -1,25 +1,13 @@
 <div class="container sample">
-  {{#liquid-if showLanguage class="test-animation language" enableGrowth=false}}
-    {{ test-language choice=(action 'chooseLanguage') }}
-  {{else}}
-
-    {{#liquid-if showTaste class="test-animation taste" enableGrowth=false}}
-      {{ taste-test sample=model choice=(action 'chooseTaste' model) }}
-    {{else}}
-      {{#liquid-if showColor class="test-animation color" enableGrowth=false}}
-          {{ color-test sample=model choice=(action 'chooseColor' model) }}
-      {{else}}
-
-        {{#liquid-if showResults class="test-animation response" enableGrowth=false}}
-          {{ test-response sample=model reset=(route-action 'resetTest')}}
-        {{/liquid-if}}
-      {{/liquid-if}}
-    {{/liquid-if}}
 
 
-  {{/liquid-if}}
+  {{#liquid-bind currentTest use="toLeft" as |test|}}
+    {{ taste-test test=test choose=(action 'choose') click=(action 'start')}}
+  {{/liquid-bind}}
 
 
 
-  <img src="assets/images/logo_small.png" alt="" class="lower-logo">
+
+
+  {{!--<img src="assets/images/logo_small.png" alt="" class="lower-logo">--}}
 </div>

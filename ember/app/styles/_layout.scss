@@ -21,9 +21,12 @@ h1, h2, h3, h4, h5{
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background: url('images/tablet_bg.jpg');
-  background-size:cover;
+  // background: url('images/tablet_bg.jpg');
+  // background-size:cover;
   font-family: Din, sans-serif;
+  &.sample{
+    background-color: black;
+  }
   &.signup{
     background-color: white;
     background-image:none;
@@ -35,22 +38,35 @@ h1, h2, h3, h4, h5{
 }
 
 .button-container{
-  margin-top:.25em;
   width: 100%;
+  z-index: 2;
+  position: absolute;
+  bottom:2em;
   button{
     font-size: 1.7em;
     border:none;
     box-shadow:0 0 15px 0 rgba(0,0,0,.5);
     background-color: white;
-    color:red;
+    // color:red;
     border-radius: .2em;
     padding:.25em .5em;
-    margin: 0 1em;
+    margin: 0 .3em;
 
     &.language{
       font-size:1.2em;
     }
   }
+}
+
+.taste-test-image{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display:table-cell;
+  vertical-align: middle;
+  background-repeat:no-repeat;
+  background-position: center center;
 }
 
 .lower-logo{

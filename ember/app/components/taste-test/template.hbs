@@ -1,6 +1,9 @@
-<img src="{{ imagePath }}" alt="" class='text-image'>
+
+{{taste-test-image image=test.image}}
+
 
 <div class="button-container">
-  <button {{ action choice 'A' }}>A</button>
-  <button {{ action choice 'B' }}>B</button>
+  {{#each test.choices as |choice|}}
+    <button {{ action choose choice.value bubbles=false }} style={{buttonStyle}}>{{choice.label}}</button>
+  {{/each}}
 </div>

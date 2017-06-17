@@ -19,12 +19,12 @@ class SampleController extends Controller
     public function store(Request $request)
     {
       $truthyAnswers = array_filter($request->input('sample'));
-      if(count($truthyAnswers) > 2){
+      if(count($truthyAnswers) > 3){
         return \Response::make('too many true answers', 400);
       }
 
       $sample = Sample::create($request->input('sample'));
 
-      return ['sample'=>$sample];
+      return ['samples'=>[$sample]];
     }
 }

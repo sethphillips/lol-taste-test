@@ -1,9 +1,12 @@
 import Ember from 'ember';
-import TextImage from 'lol-taste-test/mixins/text-image';
+// import TextImage from 'lol-taste-test/mixins/text-image';
 
 
-export default Ember.Component.extend(TextImage,{
+export default Ember.Component.extend({
   i18n: Ember.inject.service(),
   classNames: ['test-step','taste'],
-  image: 'taste',
+
+  buttonStyle: Ember.computed('test.color',function(){
+    return Ember.String.htmlSafe(`color:${this.get('test.color')};`)
+  })
 });
