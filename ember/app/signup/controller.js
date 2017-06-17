@@ -87,9 +87,8 @@ export default Ember.Controller.extend({
       this.set('scanError',undefined);
       this.set('scanError', 'Badge scanned please wait...');
       this.get('ajax').request('/api/badgescan',{
-        method: 'GET',
+        method: 'POST',
         data: {barcode:value},
-        contentType:'text/plain',
       }).then((response)=>{
         if(response.Success){
           this._fillInModel(response.LeadInfo);
