@@ -3,6 +3,8 @@ import Flavors from 'lol-taste-test/fixtures/flavors';
 
 export default Ember.Component.extend({
 
+  listOneOpen:true,
+
   didInsertElement(){
     window.Draggable.create(".draggable", {type:"scrollTop", edgeResistance:0.7, throwProps:true});
   },
@@ -22,14 +24,12 @@ export default Ember.Component.extend({
   }),
 
   featured: Ember.computed(function(){
-    let flavors = Flavors.filterBy('Featured');
-    let random = Math.floor(Math.random() * flavors.length);
-    return flavors[random];
+    return Flavors.filterBy('Featured').sortBy('SKU');
   }),
 
   categories: Ember.computed(function(){
     return Flavors.getEach('Category').uniq().sort().map((name)=>{
-      let flavors = Flavors.filterBy('Category',name);
+      let flavors = Flavors.filterBy('Category',name).sortBy('SKU');
       return {name,flavors}
     });
   }),

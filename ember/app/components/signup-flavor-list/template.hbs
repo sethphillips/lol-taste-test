@@ -1,18 +1,33 @@
-{{ signup-flavor
-  signup=signup
-  item=featured
-  featured=true
-  add=add
-  remove=remove
-}}
+{{#liquid-spacer class="flavor-list-animate" growDuration=500}}
 
+  <div class="flavor-list">
+    <h4 {{ action 'openListOne' }}>CHOOSE FROM OUR FEATURED FLAVORS {{ fa-icon icon="chevron-up" rotate=rotateOne }}</h4>
+
+    {{#if listOneOpen}}
+
+      <p>Click on any flavor for a product description and to select the sample size you’d like to receive:</p>
+
+
+      {{#each featured as |flavor|}}
+        {{ signup-flavor
+          signup=signup
+          item=flavor
+          add=add
+          remove=remove
+        }}
+      {{/each}}
+
+    {{/if}}
+  </div>
+
+{{/liquid-spacer}}
 
 {{#liquid-spacer class="flavor-list-animate" growDuration=500}}
 
   <div class="flavor-list">
-    <h4 {{ action 'openListOne' }}>CHOOSE FROM OUR FLAVORS {{ fa-icon icon="chevron-up" rotate=rotateOne }}</h4>
+    <h4 {{ action 'openListTwo' }}>CHOOSE FROM ALL FLAVORS {{ fa-icon icon="chevron-up" rotate=rotateTwo }}</h4>
 
-    {{#if listOneOpen}}
+    {{#if listTwoOpen}}
 
       <p>Click on any flavor for a product description and to select the sample size you’d like to receive:</p>
 

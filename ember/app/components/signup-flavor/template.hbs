@@ -78,18 +78,10 @@
           MTS
         </td>
         <td>
-          {{item.MTS}}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Exported
-        </td>
-        <td>
-          {{#if item.Exported}}
+          {{#if item.MTS}}
             {{fa-icon 'check' class='yes'}}
-            {{else}}
-              {{fa-icon 'ban' class='no'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
           {{/if}}
         </td>
       </tr>
