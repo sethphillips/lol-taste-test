@@ -5,6 +5,10 @@ export default Ember.Component.extend({
 
   offsetY: 0,
 
+  src: Ember.computed('cutsheet',function(){
+    return Ember.String.htmlSafe(this.get('cutsheet'));
+  }),
+
   actions:{
     openModal(){
       this.set('modalOpen',true);

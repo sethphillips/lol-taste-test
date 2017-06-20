@@ -21,6 +21,8 @@ export default Ember.Route.extend({
 
     controller.set('scanModalOpen',false);
     controller.set('submitModalOpen',false);
+    controller.set('showForm',true);
+    controller.set('showFlavors',false);
 
     Ember.$(document).activity({
       delay: 45000,

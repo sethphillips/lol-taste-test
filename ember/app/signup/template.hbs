@@ -1,6 +1,10 @@
 <div class="container signup">
 
-  {{ information-cutsheet }}
+  <div class="information-cutsheet-container">
+    {{ information-cutsheet title="Cheese Powders" cutsheet="/pdf/cheese.pdf"}}
+    {{ information-cutsheet title="Dairy Powders" cutsheet="/pdf/dairy.pdf"}}
+    {{ information-cutsheet title="Seasoning Blends" cutsheet="/pdf/seasoning.pdf"}}
+  </div>
 
   <div class="logo-container">
     <img src="assets/images/logo_ingredients.png" class="logo">
@@ -23,7 +27,9 @@
     {{/liquid-if}}
   </div>
 
-  <button class="badge-scan-button" {{ action 'openScanModal' }}>To complete form by scanning your badge, tap here.</button>
+  {{#if showForm}}
+    <button class="badge-scan-button" {{ action 'openScanModal' }}>To complete form by scanning your badge, tap here.</button>
+  {{/if}}
 </div>
 
 {{#if submitModalOpen}}

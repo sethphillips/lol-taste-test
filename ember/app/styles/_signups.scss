@@ -6,11 +6,14 @@
   }
 }
 
-.information-cutsheet{
+.information-cutsheet-container{
   position: absolute;
   top:2%;
   right:7%;
-  z-index: 100;
+  z-index: 3;
+  .information-cutsheet{
+    display: inline-block;
+  }
   .button{
     font-size:1em;
     border-radius:5px;
