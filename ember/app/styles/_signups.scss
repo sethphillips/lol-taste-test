@@ -135,7 +135,7 @@
     border:4px solid $orange;
     padding:.5em 1em;
     border-radius: 10px;
-    font-size:1.2em;
+    font-size:.8em;
     .fa{
       // float:right;
     }
@@ -201,6 +201,15 @@
   width: 50%;
   td:first-child{
     // text-align: right;
+  }
+  .table-header{
+    margin-top:1em;
+  }
+  .yes{
+    color:green;
+  }
+  .no{
+    color:red;
   }
 }
 

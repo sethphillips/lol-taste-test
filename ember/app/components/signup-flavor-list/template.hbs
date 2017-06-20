@@ -7,59 +7,25 @@
 }}
 
 
-
 {{#liquid-spacer class="flavor-list-animate" growDuration=500}}
 
   <div class="flavor-list">
-    <h4 {{ action 'openListOne' }}>SPRAY-DRIED DAIRY POWDERS {{ fa-icon icon="chevron-up" rotate=rotateOne }}</h4>
+    <h4 {{ action 'openListOne' }}>CHOOSE FROM OUR FLAVORS {{ fa-icon icon="chevron-up" rotate=rotateOne }}</h4>
 
     {{#if listOneOpen}}
 
-      <p>Click on any spray-dried dairy powder for a product description and to select the sample size you’d like to receive:</p>
+      <p>Click on any flavor for a product description and to select the sample size you’d like to receive:</p>
 
-      <h5>Cheddar Cheese Powders</h5>
-      {{#each cheeseNormal as |flavor|}}
-        {{ signup-flavor
-          signup=signup
-          item=flavor
-          add=add
-          remove=remove
-        }}
-      {{/each}}
-
-
-
-      <h5>Triple Color</h5>
-      {{#each cheeseTriple as |flavor|}}
-        {{ signup-flavor
-          signup=signup
-          item=flavor
-          add=add
-          remove=remove
-        }}
-      {{/each}}
-
-
-
-      <h5>White</h5>
-      {{#each cheeseWhite as |flavor|}}
-        {{ signup-flavor
-          signup=signup
-          item=flavor
-          add=add
-          remove=remove
-        }}
-      {{/each}}
-
-
-      <h5>Varietal</h5>
-      {{#each cheeseVarietal as |flavor|}}
-        {{ signup-flavor
-          signup=signup
-          item=flavor
-          add=add
-          remove=remove
-        }}
+      {{#each categories as |category|}}
+        <h5>{{category.name}}</h5>
+        {{#each category.flavors as |flavor|}}
+          {{ signup-flavor
+            signup=signup
+            item=flavor
+            add=add
+            remove=remove
+          }}
+        {{/each}}
       {{/each}}
 
     {{/if}}
@@ -67,54 +33,6 @@
 
 {{/liquid-spacer}}
 
-
-{{#liquid-spacer class="flavor-list-animate" growDuration=500}}
-
-  <div class="flavor-list">
-    <h4 {{ action 'openListTwo' }}>DRY-BLENDED SEASONINGS {{ fa-icon icon="chevron-up" rotate=rotateOne }}</h4>
-
-    {{#if listTwoOpen}}
-
-      <p>Click on any dry-blended seasoning for a product description and to select the sample size you’d like to receive:</p>
-
-      <h5>Distinctive Flavors</h5>
-      {{#each seasoningDistinctive as |flavor|}}
-        {{ signup-flavor
-          signup=signup
-          item=flavor
-          add=add
-          remove=remove
-        }}
-      {{/each}}
-
-
-
-      <h5>Nacho</h5>
-
-      {{#each seasoningNacho as |flavor|}}
-        {{ signup-flavor
-          signup=signup
-          item=flavor
-          add=add
-          remove=remove
-        }}
-      {{/each}}
-
-
-      <h5>Sour Cream</h5>
-      {{#each seasoningSourCream as |flavor|}}
-        {{ signup-flavor
-          signup=signup
-          item=flavor
-          add=add
-          remove=remove
-        }}
-      {{/each}}
-
-    {{/if}}
-  </div>
-
-{{/liquid-spacer}}
 
 <div class="buttons">
   <button class="submit back" {{ action back }}>back</button>

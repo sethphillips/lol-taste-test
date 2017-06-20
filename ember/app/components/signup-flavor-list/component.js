@@ -22,37 +22,17 @@ export default Ember.Component.extend({
   }),
 
   featured: Ember.computed(function(){
-    return Flavors.findBy('Featured');
+    let flavors = Flavors.filterBy('Featured');
+    let random = Math.floor(Math.random() * flavors.length);
+    return flavors[random];
   }),
 
-  cheeseNormal: Ember.computed(function(){
-    return Flavors.filterBy('Category','Normal');
+  categories: Ember.computed(function(){
+    return Flavors.getEach('Category').uniq().sort().map((name)=>{
+      let flavors = Flavors.filterBy('Category',name);
+      return {name,flavors}
+    });
   }),
-
-  cheeseTriple: Ember.computed(function(){
-    return Flavors.filterBy('Category','Triple');
-  }),
-
-  cheeseWhite: Ember.computed(function(){
-    return Flavors.filterBy('Category','White');
-  }),
-
-  cheeseVarietal: Ember.computed(function(){
-    return Flavors.filterBy('Category','Varietal');
-  }),
-
-  seasoningDistinctive: Ember.computed(function(){
-    return Flavors.filterBy('Category','Distinctive');
-  }),
-
-  seasoningNacho: Ember.computed(function(){
-    return Flavors.filterBy('Category','Nacho');
-  }),
-
-  seasoningSourCream: Ember.computed(function(){
-    return Flavors.filterBy('Category','Sour Cream');
-  }),
-
 
   actions:{
     openListOne(){

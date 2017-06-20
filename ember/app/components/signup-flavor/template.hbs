@@ -20,7 +20,7 @@
       }}
         1lb
       {{/radio-button}}
-      <p class="text">
+      <p class="Description">
         {{ item.Description }}
       </p>
     </div>
@@ -47,7 +47,7 @@
         1lb
       {{/radio-button}}
       <p class="text">
-        {{ flavor.text }}
+        {{ item.Description }}
       </p>
     </div>
   {{/liquid-if}}
@@ -66,33 +66,152 @@
     <p>{{ item.Description }}</p>
     <table>
       <tr>
-        <td>Calories:</td>
-        <td>{{ item.Calories }}</td>
+        <td>
+          Color
+        </td>
+        <td>
+          {{item.Color}}
+        </td>
       </tr>
       <tr>
-        <td>Protein:</td>
-        <td>{{ item.Protein }}</td>
+        <td>
+          MTS
+        </td>
+        <td>
+          {{item.MTS}}
+        </td>
       </tr>
       <tr>
-        <td>Total Carbs:</td>
-        <td>{{ item.TotalCarbohydrates }}</td>
+        <td>
+          Exported
+        </td>
+        <td>
+          {{#if item.Exported}}
+            {{fa-icon 'check' class='yes'}}
+            {{else}}
+              {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan=2><h4 class="table-header">Certifications and Claims</h4></td>
+      </tr>
+
+      <tr>
+        <td>
+          Kosher
+        </td>
+        <td>
+          {{#if item.Kosher}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
-        <td>Total Sugar:</td>
-        <td>{{ item.TotalSugar }}</td>
+        <td>
+          Halal
+        </td>
+        <td>
+          {{#if item.Halal}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
-        <td>Total Fat:</td>
-        <td>{{ item.TotalFat }}</td>
+        <td>
+          Organic
+        </td>
+        <td>
+          {{#if item.Organic}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
-        <td>Calcium:</td>
-        <td>{{ item.Calcium }}</td>
+        <td>
+          No Artificial Flavors
+        </td>
+        <td>
+          {{#if item.NoArtificialFlavors}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
-        <td>Sodium:</td>
-        <td>{{ item.Sodium }}</td>
+        <td>
+          No FD&C Colors
+        </td>
+        <td>
+          {{#if item.NoFDCColors}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
       </tr>
+      <tr>
+        <td>
+          Clean Label
+        </td>
+        <td>
+          {{#if item.CleanLabel}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan=2><h4 class="table-header">Applications</h4></td>
+      </tr>
+
+      <tr>
+        <td>
+          Snacks
+        </td>
+        <td>
+          {{#if item.Snacks}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Sauces
+        </td>
+        <td>
+          {{#if item.Sauces}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Salad Dressings & Dips
+        </td>
+        <td>
+          {{#if item.SaladDressingsDips}}
+            {{fa-icon 'check' class='yes'}}
+          {{else}}
+            {{fa-icon 'ban' class='no'}}
+          {{/if}}
+        </td>
+      </tr>
+
     </table>
   {{/tether-dialog}}
 {{/if}}
