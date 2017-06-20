@@ -1,5 +1,7 @@
 import Ember from 'ember';
 import {task, timeout} from 'ember-concurrency';
+import arrayRandom from 'lol-taste-test/utils/array-random';
+
 export default Ember.Controller.extend({
 
 
@@ -23,7 +25,6 @@ export default Ember.Controller.extend({
 
   screens:[
     {
-      component:'test-results',
       image:'/assets/images/results/result_bold.jpg',
       color:'#EC1F2F',
       choices:[
@@ -32,9 +33,8 @@ export default Ember.Controller.extend({
         {label:'C',value:'boldC'},
       ]
     },
-    {component:'test-fact'},
+    {}, // i am a fact slide
     {
-      component:'test-results',
       image:'/assets/images/results/result_mouthfeel.jpg',
       color:'#0EBFD7',
       choices:[
@@ -43,9 +43,8 @@ export default Ember.Controller.extend({
         {label:'C',value:'mouthfeelC'},
       ]
     },
-    {component:'test-fact'},
+    {}, // i am a fact slide
     {
-      component:'test-results',
       image:'/assets/images/results/result_cheddar.jpg',
       color:'#FDD800',
       choices:[
@@ -54,7 +53,7 @@ export default Ember.Controller.extend({
         {label:'C',value:'cheddarC'},
       ]
     },
-    {component:'test-fact'},
+    {}, // i am a fact slide
   ],
 
 });

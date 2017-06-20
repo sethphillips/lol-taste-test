@@ -1,7 +1,6 @@
 <div class="container test-results">
-{{log model}}
   {{#liquid-bind activeScreen use="toLeft" enableGrowth=false as |screen|}}
-    {{ component screen.component
+    {{ test-results
       allResults=model
       screen=screen
     }}
