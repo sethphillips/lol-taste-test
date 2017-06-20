@@ -1,42 +1,60 @@
 import Ember from 'ember';
-
+import {task, timeout} from 'ember-concurrency';
 export default Ember.Controller.extend({
 
-  screen: 'test-results',
-  sample: 'a',
-  closure: Ember.computed(function(){
-    return this.actions.showFact;
+
+
+  animateScreens: task(function*(){
+
+    let screen = this.get('screen');
+    this.set('activeScreen', this.get('screens').objectAt(screen));
+
+    yield timeout(8000);
+
+    this.set('screen',screen+1)
+
+    if(screen >= this.get('screens.length') - 1){
+      this.set('screen',0)
+    }
+
+    this.get('animateScreens').perform();
   }),
 
 
-  actions:{
-    showFact(){
-      let sample = this.get('sample');
-      this.set('screen','test-fact');
-      if(sample === 'a'){
-        this.set('closure',this.actions.showB);
-      }
-      else if(sample === 'b'){
-        this.set('closure',this.actions.showCall);
-      }
-      else{
-        this.set('closure',this.actions.showA);
-      }
+  screens:[
+    {
+      component:'test-results',
+      image:'/assets/images/results/result_bold.jpg',
+      color:'#EC1F2F',
+      choices:[
+        {label:'A',value:'boldA'},
+        {label:'B',value:'boldB'},
+        {label:'C',value:'boldC'},
+      ]
     },
-    showA(){
-      this.set('screen','test-results');
-      this.set('sample','a');
-      this.set('closure',this.actions.showFact);
+    {component:'test-fact'},
+    {
+      component:'test-results',
+      image:'/assets/images/results/result_mouthfeel.jpg',
+      color:'#0EBFD7',
+      choices:[
+        {label:'A',value:'mouthfeelA'},
+        {label:'B',value:'mouthfeelB'},
+        {label:'C',value:'mouthfeelC'},
+      ]
     },
-    showB(){
-      this.set('screen','test-results');
-      this.set('sample','b');
-      this.set('closure',this.actions.showFact);
+    {component:'test-fact'},
+    {
+      component:'test-results',
+      image:'/assets/images/results/result_cheddar.jpg',
+      color:'#FDD800',
+      choices:[
+        {label:'A',value:'cheddarA'},
+        {label:'B',value:'cheddarB'},
+        {label:'C',value:'cheddarC'},
+      ]
     },
-    showCall(){
-      this.set('screen','test-call');
-      this.set('sample',null);
-      this.set('closure',this.actions.showFact);
-    },
-  }
+    {component:'test-fact'},
+  ],
+
 });

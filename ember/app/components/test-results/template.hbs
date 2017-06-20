@@ -1,5 +1,13 @@
-  <img src="assets/images/results_title.png" alt="" class="text-image">
+{{taste-test-image image=screen.image}}
 
-  {{ taste-test-results results=model sample=sample}}
 
-  {{ color-test-results results=model }}
+<div class="button-container">
+  {{#each screen.choices as |choice|}}
+    {{individual-test-result
+      buttonStyle=buttonStyle
+      screen=screen
+      choice=choice
+      allResults=allResults
+    }}
+  {{/each}}
+</div>

@@ -2,17 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  init(){
-    this._super(...arguments);
-    this.attrs.refresh();
-  },
+  classNames: ['results'],
 
-  didInsertElement(){
-    this._super(...arguments);
-    Ember.run.later(this, this._transition, 12000);
-  },
+  buttonStyle: Ember.computed('screen.color',function(){
+    return Ember.String.htmlSafe(`color:${this.get('screen.color')};`)
+  }),
 
-  _transition(){
-    this.attrs.transition();
-  },
 });

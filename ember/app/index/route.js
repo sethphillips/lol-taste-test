@@ -6,6 +6,12 @@ export default Ember.Route.extend({
     return this.store.findAll('sample')
   },
 
+  setupController(controller){
+    this._super(...arguments);
+    controller.set('screen',0);
+    controller.get('animateScreens').perform();
+  },
+
   actions:{
     refresh(){
       this.refresh();

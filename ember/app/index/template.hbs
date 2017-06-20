@@ -1,8 +1,10 @@
 <div class="container test-results">
-
-  {{#liquid-bind screen class="results-animation" enableGrowth=false as |screen|}}
-    {{ component screen model=model sample=sample transition=(action closure) refresh=(route-action 'refresh')}}
+{{log model}}
+  {{#liquid-bind activeScreen use="toLeft" enableGrowth=false as |screen|}}
+    {{ component screen.component
+      allResults=model
+      screen=screen
+    }}
   {{/liquid-bind}}
 
-  <img src="assets/images/logo_small.png" alt="" class="lower-logo">
 </div>

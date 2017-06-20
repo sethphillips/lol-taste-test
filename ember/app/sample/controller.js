@@ -6,9 +6,13 @@ export default Ember.Controller.extend({
   cheddarTestTaken: Ember.computed.or('model.cheddarA','model.cheddarB','model.cheddarC'),
   mouthfeelTestTaken: Ember.computed.or('model.mouthfeelA','model.mouthfeelB','model.mouthfeelC'),
 
-  currentTest: Ember.computed('start','boldTestTaken','mouthfeelTestTaken',function(){
+  currentTest: Ember.computed('start','cheddarTestTaken','boldTestTaken','mouthfeelTestTaken',function(){
     if(this.get('start') === false){
       return {image:'/assets/images/samples/sample_start.jpg'};
+    }
+
+    if(this.get('cheddarTestTaken')){
+      return {image:'/assets/images/samples/sample_finish.jpg'};
     }
 
     if(this.get('mouthfeelTestTaken')){
@@ -52,14 +56,16 @@ export default Ember.Controller.extend({
       let model = this.get('model');
       model.set(value,true);
       if(this.get('cheddarTestTaken')){
-        model.save()
-          .then(()=>{
-            this.set('start',false);
-            this.send('resetTest');
-          })
-          .catch(()=>{
-            window.alert('sorry somethign went wrong, please see a representative in the booth');
-          });
+        Ember.run.later(this, ()=>{
+          model.save()
+            .then(()=>{
+              this.set('start',false);
+              this.send('resetTest');
+            })
+            .catch(()=>{
+              window.alert('sorry somethign went wrong, please see a representative in the booth');
+            });
+        },4000)
       }
     },
   }

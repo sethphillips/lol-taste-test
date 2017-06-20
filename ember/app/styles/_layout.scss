@@ -14,19 +14,15 @@ h1, h2, h3, h4, h5{
 }
 
 .container{
-  background-color: $blue;
+  background-color: black;
   text-align: center;
   font-size: 3em;
   color:$cream;
   position: absolute;
   width: 100vw;
   height: 100vh;
-  // background: url('images/tablet_bg.jpg');
-  // background-size:cover;
   font-family: Din, sans-serif;
-  &.sample{
-    background-color: black;
-  }
+
   &.signup{
     background-color: white;
     background-image:none;
@@ -41,7 +37,7 @@ h1, h2, h3, h4, h5{
   width: 100%;
   z-index: 2;
   position: absolute;
-  bottom:2em;
+  bottom:1em;
   button{
     font-size: 1.7em;
     border:none;
@@ -60,8 +56,8 @@ h1, h2, h3, h4, h5{
 
 .taste-test-image{
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   display:table-cell;
   vertical-align: middle;
@@ -77,24 +73,21 @@ h1, h2, h3, h4, h5{
   background-color: $yellow;
 }
 .results{
-  display: inline-block;
-  width: 48%;
-  padding: 0;
-  vertical-align: text-top;
-  &.taste-results{
-    border-right:2px solid $cream;
-  }
-
-  h2{
-    font-size:2em;
-  }
-  h3{
-    font-size:1em;
+  width:1920px;
+  height:1080px;
+  font-size:1.1em;
+  .individual-test-result{
+    display: inline-block;
+    margin:0 .3em;
+    .result-value{
+      font-size:1.2em;
+      text-align: center;
+    }
   }
 }
 
 .test-step{
   height: 100vh;
-  // padding-top:2em;
 }
+
 
