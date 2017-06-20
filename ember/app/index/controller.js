@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import {task, timeout} from 'ember-concurrency';
-import arrayRandom from 'lol-taste-test/utils/array-random';
 
 export default Ember.Controller.extend({
 
