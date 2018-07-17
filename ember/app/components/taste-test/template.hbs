@@ -1,9 +1,16 @@
 
 {{taste-test-image image=test.image}}
 
-
-<div class="button-container">
-  {{#each test.choices as |choice|}}
-    <button {{ action choose choice.value bubbles=false }} style={{buttonStyle}}>{{choice.label}}</button>
-  {{/each}}
-</div>
+{{#if (eq step 'question')}}
+  <div class="button-container">
+    <input
+      class="input"
+      type='text'
+      oninput={{action (mut sample.answer) value="target.value"}}
+      onkeydown={{action 'enter'}}
+    >
+    <button
+      onclick={{action choose}}
+    >Submit</button>
+  </div>
+{{/if}}

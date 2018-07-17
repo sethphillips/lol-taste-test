@@ -37,16 +37,27 @@ h1, h2, h3, h4, h5{
   width: 100%;
   z-index: 2;
   position: absolute;
-  bottom:1em;
+  bottom:.25em;
+  input{
+    display:block;
+    margin:auto;
+    margin-bottom:.25em;
+    font-size:1.75em;
+    width:65%;
+    border-radius:15px;
+    border:none;
+  }
   button{
-    font-size: 1.7em;
+    font-size: .5em;
+    display:block;
+    margin:auto;
+    margin-top:.5em;
     border:none;
     box-shadow:0 0 15px 0 rgba(0,0,0,.5);
     background-color: white;
     // color:red;
     border-radius: .2em;
     padding:.25em .5em;
-    margin: 0 .3em;
 
     &.language{
       font-size:1.2em;
@@ -63,6 +74,7 @@ h1, h2, h3, h4, h5{
   vertical-align: middle;
   background-repeat:no-repeat;
   background-position: center center;
+  background-size:contain;
 }
 
 .lower-logo{

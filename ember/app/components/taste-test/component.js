@@ -7,4 +7,12 @@ export default Ember.Component.extend({
     return Ember.String.htmlSafe(`color:${this.get('test.color')};`)
   }),
 
+  actions:{
+    enter(key){
+      if(key.keyCode === 13){
+        this.get('choose')();
+      }
+    }
+  }
+
 });

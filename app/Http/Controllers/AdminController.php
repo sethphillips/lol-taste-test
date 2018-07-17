@@ -29,18 +29,18 @@ class AdminController extends Controller
     {
         $date = $request->input('date') ?  $request->input('date') : Carbon::now()->format('Y-m-d');
         
-        $signups = Signup::where('created_at', '>=', $date)->with('flavors')->get()->toArray();
-        $signups = array_map(function($val)
-        {
-          return array_dot($val);
-        }, $signups);
+        // $signups = Signup::where('created_at', '>=', $date)->with('flavors')->get()->toArray();
+        // $signups = array_map(function($val)
+        // {
+        //   return array_dot($val);
+        // }, $signups);
 
         $samples = Sample::where('created_at', '>=', $date)->get()->toArray();
         
-        $excel = \Excel::create("Results since $date",function($excel) use ($signups, $samples){
-            $excel->sheet('Signups', function($sheet) use ($signups){
-                $sheet->fromModel($signups);
-            });
+        $excel = \Excel::create("Results since $date",function($excel) use ($samples){
+            // $excel->sheet('Signups', function($sheet) use ($signups){
+            //     $sheet->fromModel($signups);
+            // });
             $excel->sheet('Samples', function($sheet) use ($samples){
                 $sheet->fromModel($samples);
             });

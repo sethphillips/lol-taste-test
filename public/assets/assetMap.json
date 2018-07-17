@@ -1,5 +1,6 @@
 {
   "assets": {
+    "assets/assetMap.json": "assets/assetMap.json",
     "assets/images/facts/fact_01.jpg": "assets/images/facts/fact_01-ddb70dae1bf3174f4de2cab415dd85f5.jpg",
     "assets/images/facts/fact_02.jpg": "assets/images/facts/fact_02-b6578ba8e4bd709560f954b7c5344a07.jpg",
     "assets/images/facts/fact_03.jpg": "assets/images/facts/fact_03-5572c228c1eb5faaa2b0ca3843b8d6cf.jpg",
@@ -13,18 +14,17 @@
     "assets/images/results/result_mouthfeel.jpg": "assets/images/results/result_mouthfeel-c3c162b8106d1a041fbc3b2cff782a67.jpg",
     "assets/images/results_call.png": "assets/images/results_call-a748c129348a63aac841989431bbfcc0.png",
     "assets/images/results_title.png": "assets/images/results_title-bc934bbb7e79573dba56850e0483d6cc.png",
-    "assets/images/samples/sample_bold.jpg": "assets/images/samples/sample_bold-904b696900675c278cd7a1b671b20993.jpg",
-    "assets/images/samples/sample_cheddar.jpg": "assets/images/samples/sample_cheddar-7c1a7b192f14271714906ef8a1f67e11.jpg",
-    "assets/images/samples/sample_finish.jpg": "assets/images/samples/sample_finish-8f10894704020b81c2facab6ed7af4d1.jpg",
-    "assets/images/samples/sample_mouthfeel.jpg": "assets/images/samples/sample_mouthfeel-87722516b10805ee7a2a24ab1888be7f.jpg",
-    "assets/images/samples/sample_start.jpg": "assets/images/samples/sample_start-cef4c0f44a63d676d2e99a9df0a78c61.jpg",
+    "assets/images/samples/question.jpg": "assets/images/samples/question-52fd2e3e1fdcb1619eced7b74b19644d.jpg",
+    "assets/images/samples/start.jpg": "assets/images/samples/start-e31b6ff13c12e63745f51442dce11a18.jpg",
+    "assets/images/samples/stats.jpg": "assets/images/samples/stats-108866039a0aa8832669c0047bc10ab1.jpg",
+    "assets/images/samples/thank_you.jpg": "assets/images/samples/thank_you-1940d79582377a155dc28a1e30ec8f68.jpg",
     "assets/images/sifted.jpg": "assets/images/sifted-7cbd36fcf9f11e823fe9940449877f20.jpg",
     "assets/images/signup_screensaver2.jpg": "assets/images/signup_screensaver2-0519b844efacc94e0c22832665c87ec3.jpg",
     "assets/images/tablet_bg.jpg": "assets/images/tablet_bg-f4cab149daad16c1e8b51499a3edbd48.jpg",
-    "assets/lol-taste-test.css": "assets/lol-taste-test-6f22c78a735eaf4522a2df8a7d543881.css",
-    "assets/lol-taste-test.js": "assets/lol-taste-test-b976d7708569f46824b17558e2a2256e.js",
+    "assets/lol-taste-test.css": "assets/lol-taste-test-db594504f6d749939bc60a89abfbaa00.css",
+    "assets/lol-taste-test.js": "assets/lol-taste-test-75b7994a0ed4366e729af2546ad6869d.js",
     "assets/vendor.css": "assets/vendor-9bb9754dbfbe5c858bb0428ea0f1a6d5.css",
-    "assets/vendor.js": "assets/vendor-bad48d6b5438332d068eb66d61e91d74.js"
+    "assets/vendor.js": "assets/vendor-425305a921beb6e571f7058e8edf2671.js"
   },
   "prepend": ""
 }

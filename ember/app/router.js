@@ -6,8 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('index',{path:'/'});
-  this.route('sample');
+  // this.route('index',{path:'/'});
+  this.route('sample',{path:'/'});
   this.route('signup');
   this.route('signup-screensaver');
 });

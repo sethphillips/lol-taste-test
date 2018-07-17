@@ -10,7 +10,7 @@ export default Ember.Route.extend({
 
   setupController(controller){
     this._super(...arguments);
-    controller.set('start',false);
+    controller.set('step',null);
   },
 
   actions:{

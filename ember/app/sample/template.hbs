@@ -1,9 +1,13 @@
 <div class="container sample">
 
-
   {{#liquid-bind currentTest use="toLeft" as |test|}}
-    {{ taste-test test=test choose=(action 'choose') click=(action 'start')}}
+    {{ taste-test
+      test=test
+      step=step
+      sample=model
+      choose=(action 'choose')
+      click=(action 'start')
+    }}
   {{/liquid-bind}}
-
 
 </div>

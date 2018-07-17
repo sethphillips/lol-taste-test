@@ -1,10 +1,16 @@
+import ENV from 'lol-taste-test/config/environment';
+
 export function initialize( application ) {
   application.deferReadiness();
 
   var AssetMap = Ember.Object.extend();
 
   var promise = new Ember.RSVP.Promise(function(resolve, reject) {
-      Ember.$.getJSON('assets/assetMap.json', resolve).fail(reject);
+    if(ENV.environment === 'development'){
+      resolve();
+      return;
+    }
+    Ember.$.getJSON('assets/assetMap.json', resolve).fail(reject);
   });
 
   promise.then(function(assetMap) {
